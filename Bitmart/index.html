@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bitmart</title>
+		<meta http-equiv="refresh" content="600">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery.mobile-1.3.1.js"></script>
+		<script src="js/accounting.js"></script>
+		<script src="appjs/product.js"></script>
+		<script src="appjs/address.js"></script>
+		<script src="appjs/app.js"></script>
+		<script src="appjs/thumbnails/Olympus.jpg"></script>
+	</head>
+	<body>
+
+		<div id="menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account"  > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#bid" > Bid History</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Bitmart</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books-menu" > Books</a>
+
+					</li>
+					<li>
+						<a href="#electronics-menu" > Electronics</a>
+					</li>
+					<li>
+						<a href="#computers-menu" > Computers</a>
+
+					</li>
+					<li>
+						<a href="#clothing-menu" > Clothing</a>
+					</li>
+					<li>
+						<a href="#shoes-menu" > Shoes</a>
+					</li>
+					<li>
+						<a href="#sports-menu" > Sports</a>
+					</li>
+				</ul>
+			</div>
+
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="c">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-role="button" data-icon="grid">Buying</a>
+					<a href="#selling" data-role="button" data-icon="grid">Selling</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div id ="books-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Book Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Children</a>
+
+					</li>
+					<li>
+						<a href="#books" > Fiction</a>
+					</li>
+					<li>
+						<a href="#books" > Technology</a>
+
+					</li>
+					<li>
+						<a href="#books" > Business</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div id ="electronics-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Electronics Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > TV</a>
+
+					</li>
+					<li>
+						<a href="#books" > Audio</a>
+					</li>
+					<li>
+						<a href="#books" > Phone</a>
+
+					</li>
+					<li>
+						<a href="#books" > Cameras</a>
+					</li>
+					<li>
+						<a href="#books" > Videos</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="computers-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Computers Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Laptops</a>
+
+					</li>
+					<li>
+						<a href="#books" > Desktops</a>
+					</li>
+					<li>
+						<a href="#books" > Tablets</a>
+
+					</li>
+					<li>
+						<a href="#books" > Printers</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="clothing-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Electronics Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Children</a>
+
+					</li>
+					<li>
+						<a href="#men-menu" > Men</a>
+					</li>
+					<li>
+						<a href="#women-menu" > Women</a>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="men-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Men Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Shirts</a>
+
+					</li>
+					<li>
+						<a href="#books" > Pants</a>
+					</li>
+					<li>
+						<a href="#books" > Socks</a>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="women-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Women Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Shirts</a>
+
+					</li>
+					<li>
+						<a href="#books" > Pants</a>
+					</li>
+					<li>
+						<a href="#books" > Dresses</a>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="shoes-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Shoes Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Children</a>
+
+					</li>
+					<li>
+						<a href="#books" > Women</a>
+					</li>
+					<li>
+						<a href="#books" > Men</a>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="sports-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Sports Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#bicycles-menu" > Bycicles</a>
+
+					</li>
+					<li>
+						<a href="#books" > Fishing</a>
+					</li>
+					<li>
+						<a href="#books" > Baseball</a>
+
+					</li>
+					<li>
+						<a href="#books" > Golf</a>
+					</li>
+					<li>
+						<a href="#books" > Basketball</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id ="bicycles-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Bicycles Menu</h1>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a category ...">
+					<li >
+						<a href="#books" > Frames</a>
+
+					</li>
+					<li>
+						<a href="#books" > Wheels</a>
+					</li>
+					<li>
+						<a href="#books" > Helmet</a>
+
+					</li>
+					<li>
+						<a href="#books" > Parts</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="selling" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Bitmart</h1>
+			</div>
+			<div data-role="content">
+				<p>
+					<a href="#add-book" data-role="button" data-icon="bars">List a Book</a>
+
+				</p>
+			</div>
+
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="c">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-role="button" data-icon="grid">Buying</a>
+					<a href="#selling" data-role="button" data-icon="grid">Selling</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="login" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Log In</h1>
+			</div>
+			<div data-role="content">
+				<form name="form-login">
+
+					<!-- username -->
+					<label for="username">Username</label>
+					<input id="username" id="username" title="Must be at least 8 characters."/>
+					<br />
+
+					<!-- password -->
+					<label for="password">Password</label>
+					<input id="password" type="password" title="title it hard to guess." />
+					<br />
+
+					<p>
+						<a data-role="button" onclick="loginVerification()" >Log In</a>
+					</p>
+
+					<label for="register">Don't have an account?</label>
+			</div>
+			<div data-role="content">
+				<a href="#register" data-role="button">Register</a>
+				</form>
+			</div>
+
+		</div>
+
+		</div>
+
+		<div id="register" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Register</h1>
+			</div>
+			<div data-role="content">
+
+				<!-- name -->
+				<label for="name">Name</label>
+				<input id="name" type="text" title="title it hard to guess." />
+
+				<!-- last name -->
+				<label for="lastName">Last Name</label>
+				<input id="lastName" type="password" title="title it hard to guess." />
+
+				<!-- address -->
+				<label for="address">Adress</label>
+				<input id="adress" type="text" title="title it hard to guess." />
+
+				<!-- email -->
+				<label for="email">Email</label>
+				<input id="email" type="text" title="title it hard to guess." />
+
+				<!-- Username -->
+				<label for="username">Username</label>
+				<input id="username" type="text" title="title it hard to guess." />
+
+				<!-- password -->
+				<label for="password">Password</label>
+				<input id="password" type="password" title="title it hard to guess." />
+
+				<!-- message -->
+				<label for="from">Select one</label>
+				<select id="from" title="Country">
+					<option>--Select One--</option>
+					<option>-- Alabama--</option>
+					<option>-- Puerto Rico--</option>
+					<option>-- Texas --</option>
+				</select>
+				<br />
+
+				<button name="register">
+					Register
+				</button>
+
+			</div>
+		</div>
+
+		<div id ="books" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Book</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-book"></a>
+			</div>
+			<div data-role="content">
+				<h3 style="text-align: center">Books Available</h3><div ></div>
+				<!--This is a comment. Comments are not displayed in the browser-->
+				<p>
+					<a href="#" id="asc">Ascending</a>
+					Sort: <a href="#" class="link-sort-list asc">A-Z</a><a href="#" class="link-sort-list desc">Z-A</a>
+				</p>
+				<!--This is a comment. Comments are not displayed in the browser-->
+				<ul
+				id="books-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a book..." >
+				</ul>
+			</div>
+		</div>
+
+		<div id="add-book" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#books">Cancel</a>
+				<h1>New Book</h1>
+				<a data-role="button" data-rel="back" onclick="SaveProduct()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new book info</h2>
+			</center>
+			<form id="book-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="name"> Name:
+								<input id="name" name="name" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="model"> Model:
+								<input id="model" name="model" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="description"> Description and Year:
+								<input id="description" name="description" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="price"> Price $:
+								<input id="price" name="price" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="username"> Seller:
+								<input id="username" name="username" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="quantity"> Quantity:
+								<input id="quantity" name="quantity" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="instorage"> In Storage:
+								<input id="instorage" name="instorage" type="number"/>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+
+		<div id="book-view" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#books">Cancel</a>
+				<h1>Book Info</h1>
+			</div>
+			<center>
+				<h2>Details</h2>
+			</center>
+			<form id="book-view-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="upd-name"> Name:
+								<input onkeypress="return false;" id="upd-name" name="name" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-model"> Model:
+								<input onkeypress="return false;" id="upd-model" name="model" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-description"> Description and Year:
+								<input onkeypress="return false;" id="upd-description" name="description" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-price"> Price $:
+								<input onkeypress="return false;" id="upd-price" name="price" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-username"> Seller:
+								<input onkeypress="return false;" id="upd-username" name="username" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-quantity"> Quantity:
+								<input onkeypress="return false;" id="upd-quantity" name="quantity" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-instorage"> In Storage:
+								<input onkeypress="return false;" id="upd-instorage" name="instorage" type="text"/>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a data-role="button" data-rel="back" data-icon="add" onclick="SaveItem()" data-theme="b">Add to Cart</a>
+					<a href="#popupBasic" data-role="button" data-icon="grid" data-rel="popup" data-transition="flip" data-theme="b">Buy Now</a>
+					<div data-role="popup" id="popupBasic" data-position-to="window" data-theme="e">
+						<p>
+							<h3><strong>
+							<center>
+								Invoice
+							</center></strong></h5><h5>You have bought this product.</h3>
+
+						<p>
+					</div>
+					<a href="#bid" data-role="button" data-icon="grid" data-theme="b">Bid</a>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
+<div id="account" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+	</div><!-- /panel -->
+
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+		<a href="#saveAccount" data-role="button" data-icon="edit">Save</a>
+		<h1>Account Management</h1>
+	</div>
+	<div data-role="content">
+
+		<a data-role="button" href="#account-info"> Account Information</a>
+		
+		<a data-role="button" href="#address-menu">Address</a>
+		
+		<a data-role="button" href="#creditcard">Credit Card</a>
+		
+		<a data-role="button" href="#address-menu">Products Sold</a>
+
+		<a data-role="button" href="#address-menu">Bid History</a>
+		
+		<a data-role="button" href="#address-menu">Products Purchased</a>
+		
+		<a data-role="button" href="#address-menu">Bank Account</a>
+
+
+	</div>
+
+</div>
+
+
+
+
+<!-- Jammy-->
+
+<div id="account-info" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+	</div><!-- /panel -->
+
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+		<a href="#saveAccount" data-role="button" data-icon="edit">Save</a>
+		<h1>Account Information</h1>
+	</div>
+	<div data-role="content">
+
+		<form id="user-view-form">
+			<fieldset data-role="controlgroup">
+				<ul>
+					<li>
+						<label for="upd-am-username"> Username:
+							<input  id="upd-am-username" name="username" type="text"/>
+						</label>
+					</li>
+					<li>
+						<label for="upd-am-password"> Password:
+							<input  id="upd-am-password" name="password" type="password"/>
+						</label>
+					</li>
+					<li>
+						<label for="upd-am-firstname"> First Name:
+							<input  id="upd-am-firstname" name="firstname" type="text"/>
+						</label>
+					</li>
+					<li>
+						<label for="upd-am-lastname"> Last Name:
+							<input  id="upd-am-lastname" name="lastname" type="text"/>
+						</label>
+					</li>
+					<li>
+						<label for="upd-am-email"> Email:
+							<input  id="upd-am-email" name="email" type="text"/>
+						</label>
+					</li>
+					<li>
+						<label for="upd-am-rating"> Rating:
+							<input  id="upd-am-rating" name="number" type="text"/>
+						</label>
+					</li>
+				</ul>
+			</fieldset>
+	</div>
+</div>
+<!-- Fin-->
+<!-- Credit Card and Address pages -->
+
+<div id="addnewcard" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+	</div><!-- /panel -->
+
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+		<a href="#saveAccount" data-role="button" data-icon="edit">Save</a>
+		<h1>Credit Management</h1>
+	</div>
+	<div data-role="content">
+
+		<label for="cardnumber">Card Number</label>
+		<input id="cardnumber" type="text" title="title it hard to guess." />
+
+		<label for="expdate">Expiration Date</label>
+		<input id="expdate" type="text" title="title it hard to guess." />
+
+		<label for="brand">Brand</label>
+		<input id="brand" type="text" title="title it hard to guess." />
+
+		<label for="seccode">Security Code</label>
+		<input id="seccode" type="text" title="title it hard to guess." />
+
+	</div>
+
+</div>
+
+<div id ="creditcard" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>Credit Cards</h1>
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+		<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-card"></a>
+	</div>
+	<div data-role="content">
+		<ul id="ccards-list" data-role="listview" data-inset="true" ></ul>
+	</div>
+</div>
+
+<div id ="address-menu" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>Address</h1>
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+		<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-address"></a>
+	</div>
+	<div data-role="content">
+		<ul id="addresses-list" data-role="listview" data-inset="true" ></ul>
+	</div>
+</div>
+
+
+<div id="address-view" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#account">Cancel</a>
+				<h1>Book Info</h1>
+			</div>
+			<center>
+				<h2>Details</h2>
+			</center>
+			<form id="address-view-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="upd-ad-mailAddress"> Mail Address:
+								<input id="upd-ad-mailAddress" name="mailAddress" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-city"> City:
+								<input id="upd-ad-city" name="city" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-country"> Country:
+								<input id="upd-ad-country" name="country" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-zipcode"> Zip Code:
+								<input id="upd-ad-zipcode" name="zipcode" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-username"> Username:
+								<input id="upd-ad-username" name="username" type="text"/>
+							</label>
+						</li>
+						
+					</ul>
+				</fieldset>
+			</form>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+			</div>
+		</div>
+		
+		
+		
+	<!-- end address	 -->
+		
+		
+		
+<div id ="cart" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>Cart</h1>
+		<img src="http://jqfaq.com/wp-content/uploads/logo_v1.png">
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+	</div>
+	<div data-role="content">
+		<ul id="items-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a book..."></ul>
+	</div>
+	<div data-role="content">
+		<a href="#boughtAllPopup" data-role="button" data-rel="popup">Checkout</a>
+		<div data-role="popup" id="boughtAllPopup" data-position-to="window" data-theme="e">
+			<p>
+				<h3><strong>
+				<center>
+					Invoice
+				</center></strong></h5><h5>You have bought all products.</h3>
+
+			<p>
+		</div>
+
+	</div>
+</div>
+
+<!-- <div id="add-item" data-role="page">
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a data-role="button" data-rel="back" href="#books">Cancel</a>
+		<h1>New Item</h1>
+		<a data-role="button" data-rel="back" onclick="SaveProduct()">Save</a>
+	</div>
+	<center>
+		<h2>Enter the new book info</h2>
+	</center>
+	<form id="item-form">
+		<fieldset data-role="controlgroup">
+			<ul>
+				<li>
+					<label for="upd-title"> Title:
+						<input onkeypress="return false;" id="upd-title" name="title" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-author"> Author:
+						<input onkeypress="return false;" id="upd-author" name="author" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-year"> Year:
+						<input onkeypress="return false;" id="upd-year" name="year" type="number"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-price"> Price $:
+						<input onkeypress="return false;" id="upd-price" name="price" type="number"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-description"> Description:
+						<input onkeypress="return false;" id="upd-description" name="description" type="text"/>
+					</label>
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+</div> -->
+<div id="item-view" data-role="page">
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a data-role="button" data-rel="back" href="#cart">Cancel</a>
+		<h1>Product Info</h1>
+	</div>
+	<center>
+		<h2>Details</h2>
+	</center>
+	<form id="item-view-form">
+		<fieldset data-role="controlgroup">
+			<ul>
+				<li>
+					<label for="upd-name"> Name:
+						<input onkeypress="return false;" id="upd-nameI" name="name" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-model"> Model:
+						<input onkeypress="return false;" id="upd-modelI" name="model" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-description"> Description and Year:
+						<input onkeypress="return false;" id="upd-descriptionI" name="description" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-price"> Price $:
+						<input onkeypress="return false;" id="upd-priceI" name="price" type="number"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-username"> Seller:
+						<input onkeypress="return false;" id="upd-usernameI" name="username" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-quantity"> Quantity:
+						<input onkeypress="return false;" id="upd-quantityI" name="quantity" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-instorage"> In Storage:
+						<input onkeypress="return false;" id="upd-instorageI" name="instorage" type="text"/>
+					</label>
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+	<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+	data-position="fixed" data-theme="a">
+
+		<div data-role="controlgroup" data-type="horizontal">
+			<a data-role="button" data-rel="back" data-icon="add" onclick="SaveItem()" data-theme="b">Add to Cart</a>
+			<a href="#boughtPopup" data-role="button" data-icon="grid" data-rel="popup" data-transition="flip" data-theme="b">Buy Now</a>
+			<div data-role="popup" id="boughtPopup" data-position-to="window" data-theme="e">
+				<p>
+					<h3><strong>
+					<center>
+						Invoice
+					</center></strong></h5><h5>You have bought this product.</h3>
+
+				<p>
+			</div>
+			<a href="#bid" data-role="button" data-icon="grid" data-theme="b">Bid</a>
+
+		</div>
+	</div>
+</div>
+<!-- end item -->
+
+
+<!-- add-bid begg -->
+                                                                     
+                                                                     
+                                             
+
+<!-- <div id="add-bid" data-role="page">
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a data-role="button" data-rel="back" href="#books">Cancel</a>
+		<h1>New Bid</h1>
+		<a data-role="button" data-rel="back" onclick="SaveProduct()">Save</a>
+	</div>
+	<center>
+		<h2>Enter the new book info</h2>
+	</center>
+	<form id="bid-form">
+		<fieldset data-role="controlgroup">
+			<ul>
+				<li>
+					<label for="upd-bidproduct"> Product:
+						<input onkeypress="return false;" id="upd-bidproduct" name="bidproduct" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-bidusername"> Username:
+						<input onkeypress="return false;" id="upd-bidusername" name="bidusername" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-bidamount"> Amount:
+						<input onkeypress="return false;" id="upd-bidamount" name="bidamount" type="number"/>
+					</label>
+				</li>
+				
+			</ul>
+		</fieldset>
+	</form>
+</div> -->
+<!-- end add bid -->
+<div id="bid-view" data-role="page">
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<a data-role="button" data-rel="back" href="#bid">Cancel</a>
+		<h1>Bid History</h1>
+	</div>
+	<center>
+		<h2>Details</h2>
+	</center>
+	<form id="bid-view-form">
+		<fieldset data-role="controlgroup">
+			<ul>
+				<li>
+					<label for="upd-bidproduct"> Product:
+						<input onkeypress="return false;" id="upd-bidproduct" name="bidproduct" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-bidusername"> Username:
+						<input onkeypress="return false;" id="upd-bidusername" name="bidusername" type="text"/>
+					</label>
+				</li>
+				<li>
+					<label for="upd-bidamount"> Amount:
+						<input onkeypress="return false;" id="upd-bidamount" name="bidamount" type="number"/>
+					</label>
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+	<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+	data-position="fixed" data-theme="a">
+
+		<div data-role="controlgroup" data-type="horizontal">
+			<a data-role="button" data-rel="back" data-icon="add" onclick="SaveBid()" data-theme="b">Add to Bid</a>
+			
+			<a href="#bid" data-role="button" data-icon="grid" data-theme="b">Bid</a>
+
+		</div>
+	</div>
+</div>
+
+<!-- begg bid -->
+
+<div id ="bid" data-role="page">
+	<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+		<ul data-role="listview" data-theme="h">
+			<li>
+				<a href="#menu" > Menu</a>
+			</li>
+			<li>
+				<a href="#register" >Register</a>
+			</li>
+			<li>
+				<a href="#cart" > Cart</a>
+			</li>
+			<li>
+				<a href="#account" > Account</a>
+			</li>
+			<li>
+				<a href="#login" > Login</a>
+			</li>
+		</ul>
+	</div><!-- /panel -->
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>Bid History</h1>
+		<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+	</div>
+	<div data-role="content">
+		<ul id="bids-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search a bid"></ul>
+	</div>
+	<div data-role="content">
+		<a href="#removebid" data-role="button">Remove Bid</a>
+	</div>
+</div>
+<!-- end bid -->
+
+
+
+
+
