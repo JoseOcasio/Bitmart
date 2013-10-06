@@ -72,7 +72,7 @@
 			</div>
 
 			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
-			data-position="fixed" data-theme="c">
+			data-position="fixed" data-theme="a">
 
 				<div data-role="controlgroup" data-type="horizontal">
 					<a href="#menu" data-role="button" data-icon="grid" data-theme="e">Buying</a>
@@ -514,13 +514,13 @@
 			
 			<div data-role="content">
 
-				<a href="#add-book" data-role="button" >List a Product</a>
+				<a href="#add-book" data-role="button" data-theme="b">List a Product</a>
 
 				
 			</div>
 
 			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
-			data-position="fixed" data-theme="c">
+			data-position="fixed" data-theme="a">
 
 				<div data-role="controlgroup" data-type="horizontal">
 					<a href="#menu" data-role="button" data-icon="grid" data-theme="e">Buying</a>
@@ -1215,14 +1215,13 @@
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
 				<h1>Cart</h1>
-				<img src="http://jqfaq.com/wp-content/uploads/logo_v1.png">
-				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<!-- <img src="http://jqfaq.com/wp-content/uploads/logo_v1.png"> -->				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
 			</div>
 			<div data-role="content">
-				<ul id="items-list" data-role="listview" data-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search a book..."></ul>
+				<ul id="items-list" data-role="listview" data-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search in cart..."></ul>
 			</div>
 			<div data-role="content">
-				<a href="#boughtAllPopup" data-role="button" data-rel="popup">Checkout</a>
+				<a href="#boughtAllPopup" data-theme="b" data-role="button" data-rel="popup">Checkout</a>
 				<div data-role="popup" id="boughtAllPopup" data-position-to="window" data-theme="e">
 					<p>
 						<h3><strong>
@@ -1397,13 +1396,11 @@
 			</div>
 			<form id="bid-amount-form">
 				<fieldset data-role="controlgroup">
-					<ul>
-						<li>
-							<label for="upd-bidamount"> $:
+					
+							<label for="upd-bidamount"> Amount:
 								<input id="upd-bidamount" name="bidamount" type="text"/>
 							</label>
-						</li>
-					</ul>
+					
 				</fieldset>
 			</form>
 			<div data-role="content" id="amountButtonDiv" >

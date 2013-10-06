@@ -16,13 +16,13 @@ $(document).on('pagebeforeshow', "#books", function( event, ui ) {
 				product = productList[i];
 				list.append("<li><a onclick=GetProduct(" + product.id + ")>" +  
 					"<img src=\"appjs/thumbnails/book.jpg\" align=\"middle\" style=\"max-height: 50px\" style=\"max-width: auto\" >" +
-					"<h2> " + product.name + "</h2>" +
-					"<p><strong>"  + product.model +  "</strong></p>" +
-					"<p> Description: " + product.description + "</p>" + 
+					"<p> " + product.name + "</p>" +
+					"<p>"  + product.model +  "</p>" +
+					//"<p> Description: " + product.description + "</p>" + 
 					"<p class=\"ui-li-aside\">" + accounting.formatMoney(product.price) + "</p>" +
-					"<p> Seller: " + product.username + "</p>" + 
-					"<p> Quantity: " + product.quantity + "</p>" + 
-					"<p> In Storage: " + product.instorage + "</p>" + 
+					//"<p> Seller: " + product.username + "</p>" + 
+					//"<p> Quantity: " + product.quantity + "</p>" + 
+					//"<p> In Storage: " + product.instorage + "</p>" + 
 					"</a></li>");
 			}
 			list.listview("refresh");	
@@ -189,14 +189,14 @@ $(document).on('pagebeforeshow', "#cart", function( event, ui ) {
 				//<img src="http://jqfaq.com/wp-content/uploads/logo_v1.png">
 				item = itemList[i];
 				list.append("<li>  <a onclick=GetItem(" + item.id + ")>" +
-					"<h2> "  +  item.name + "</h2>" +
-					"<img src =http://jqfaq.com/wp-content/uploads/logo_v1.png>"+
-					"<p><strong>"  + item.model +  "</strong></p>" +
-					"<p> Description: " + item.description + "</p>" +
+					"<p> "  +  item.name + "</p>" +
+					//"<img src =http://jqfaq.com/wp-content/uploads/logo_v1.png>"+
+					"<p>"  + item.model +  "</p>" +
+					//"<p> Description: " + item.description + "</p>" +
 					"<p class=\"ui-li-aside\">" + accounting.formatMoney(item.price) + "</p>" +
-					"<p> Seller: " + item.username + "</p>" +
-					"<p> Quantity: " + item.quantity + "</p>" +
-					"<p> In Storage: " + item.instorage + "</p>" +
+					//"<p> Seller: " + item.username + "</p>" +
+					//"<p> Quantity: " + item.quantity + "</p>" +
+					//"<p> In Storage: " + item.instorage + "</p>" +
 					"</a></li>");
 			}
 			list.listview("refresh");	
