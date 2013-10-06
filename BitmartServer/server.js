@@ -45,6 +45,9 @@ var userList = new Array(
 	new User("JammyVm", "123", "Jammy", "Velez", "jammy.velez@upr.edu", "4"),
 	new User("Heisenberg", "123", "Walter", "White", "walter.white@upr.edu", "5")
 );
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 
 
@@ -137,6 +140,39 @@ var itemList = new Array(
 	new Item("Stripes Shirt", "Volcom", "Medium", "14.99", "",  "Volcom", "JammyVM", "10", "5")
 
 );
+
+
+
+// REST Operation - HTTP DELETE to delete an item based on its id
+app.del('/BitmartServer/items/:id', function(req, res) {
+	var id = req.params.id;
+		console.log("DELETE item: " + id);
+
+	if ((id < 0) || (id >= itemNextId)){
+		// not found
+		res.statusCode = 404;
+		res.send("Item not found.");
+	}
+	else {
+		var target = -1;
+		for (var i=0; i < itemList.length; ++i){
+			if (itemList[i].id == id){
+				target = i;
+				break;	
+			}
+		}
+		if (target == -1){
+			res.statusCode = 404;
+			res.send("Item not found.");			
+		}	
+		else {
+			itemList.splice(target, 1);
+  			res.json(true);
+  		}		
+	}
+});
+
+
 
 
 app.get('/BitmartServer/items', function(req, res) {
@@ -367,15 +403,8 @@ app.post('/BitmartServer/products', function(req, res) {
 
 
 
-//get all cards
-//cards
-
-
-app.get('/BitmartServer/ccards', function(req, res) {
-	console.log("GET");
-	var response = {"ccards" : ccardList};
-	res.json(response);
-});
+//Credit card
+///////////////////////////////////////////////////////////////////cards
 
 
  var ccardNextId = 0;
@@ -383,15 +412,16 @@ app.get('/BitmartServer/ccards', function(req, res) {
 for (var i=0; i < ccardList.length;++i){
 	ccardList[i].id = ccardNextId++;
 }
-
-
-
-
-// REST Operation - HTTP GET to read an item based on its id
+app.get('/BitmartServer/ccards', function(req, res) {
+	console.log("GET");
+	
+	var response = {"ccards" : ccardList};
+  	res.json(response);
+});
+// REST Operation - HTTP GET to read a car based on its id
 app.get('/BitmartServer/ccards/:id', function(req, res) {
 	var id = req.params.id;
 		console.log("GET ccard: " + id);
-
 	if ((id < 0) || (id >= ccardNextId)){
 		// not found
 		res.statusCode = 404;
@@ -407,33 +437,97 @@ app.get('/BitmartServer/ccards/:id', function(req, res) {
 		}
 		if (target == -1){
 			res.statusCode = 404;
-			res.send("Ccard not found.");
+			res.send("ccard not found.");
 		}
 		else {
-			var response = {"ccards" : ccardList[target]};
+			var response = {"ccard" : ccardList[target]};
   			res.json(response);	
   		}	
 	}
 });
-
-
-// REST Operation - HTTP POST to add a new ccard
+// REST Operation - HTTP PUT to updated a car based on its id
+app.put('/BitmartServer/ccards/:id', function(req, res) {
+	var id = req.params.id;
+		console.log("PUT ccard: " + id);
+	if ((id < 0) || (id >= ccardNextId)){
+		// not found
+		res.statusCode = 404;
+		res.send("Ccard not found.");
+	}
+	else if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
+  	|| !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') || !req.body.hasOwnProperty('secCode')) {
+    	res.statusCode = 400;
+    	return res.send('Error: Missing fields for ccard.');
+  	}
+	else {
+		var target = -1;
+		for (var i=0; i < ccardList.length; ++i){
+			if (ccardList[i].id == id){
+				target = i;
+				break;	
+			}
+		}
+		if (target == -1){
+			res.statusCode = 404;
+			res.send("Ccard not found.");			
+		}	
+		else {
+			var theCcard= ccardList[target];
+			theCcard.cardNumber = req.body.carNumber;
+			theCcard.username = req.body.username;
+			theCcard.expDate = req.body.expDate;
+			theCcard.brand = req.body.brand;
+			theCcard.secCode = req.body.secCode;
+			var response = {"Ccard" : theCcard};
+  			res.json(response);		
+  		}
+	}
+});
+// REST Operation - HTTP DELETE to delete a car based on its id
+app.del('/BitmartServer/ccards/:id', function(req, res) {
+	var id = req.params.id;
+		console.log("DELETE ccard: " + id);
+	if ((id < 0) || (id >= ccardNextId)){
+		// not found
+		res.statusCode = 404;
+		res.send("Ccard not found.");
+	}
+	else {
+		var target = -1;
+		for (var i=0; i < ccardList.length; ++i){
+			if (ccardList[i].id == id){
+				target = i;
+				break;	
+			}
+		}
+		if (target == -1){
+			res.statusCode = 404;
+			res.send("Ccard not found.");			
+		}	
+		else {
+			ccardList.splice(target, 1);
+  			res.json(true);
+  		}		
+	}
+});
+// REST Operation - HTTP POST to add a new a car
 app.post('/BitmartServer/ccards', function(req, res) {
 	console.log("POST");
-
   	if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
   	|| !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') || !req.body.hasOwnProperty('secCode')) {
     	res.statusCode = 400;
-    	return res.send('Error: Missing fields for ccards.');
+    	return res.send('Error: Missing fields for ccard.');
   	}
-
-  	var newCcard = new Ccard(req.body.cardNumber, req.body.useraneme, req.body.expDate, req.body.brand, req.body.secCode);
+  	var newCcard = new Ccard(req.body.cardNumber, req.body.username, req.body.expDate, req.body.brand, req.body.secCode);
   	console.log("New Ccard: " + JSON.stringify(newCcard));
   	newCcard.id = ccardNextId++;
   	ccardList.push(newCcard);
   	res.json(true);
 });
 
+
+
+                                    
 
 //end card
 ////////////////////////////////////////////////
@@ -442,6 +536,9 @@ app.post('/BitmartServer/ccards', function(req, res) {
 
 //////////////////////////////////////////////////////
 //get of user
+
+
+
 
 
 app.get('/BitmartServer/users', function(req, res) {
@@ -584,20 +681,6 @@ app.post('/BitmartServer/users', function(req, res) {
 
 //end user
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-//address
-
-
-
-
-
-
-
-
-
-
 
 
 

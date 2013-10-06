@@ -170,34 +170,6 @@ function DeleteProduct(){
 	});
 }
 
-// 
-// ////////////////////////////////////////Not used for now
-// function ShoppingCart(){
-	// $.mobile.loading("show");
-	// var id = currentItem.id;
-	// $.ajax({
-		// url : "http://localhost:3412/BitmartServer/items/" + id,
-		// method: 'post',
-		// contentType: "application/json",
-		// dataType:"json",
-		// success : function(data, textStatus, jqXHR){
-			// $.mobile.loading("hide");
-			// $.mobile.navigate("#cart");
-		// },
-		// error: function(data, textStatus, jqXHR){
-			// console.log("textStatus: " + textStatus);
-			// $.mobile.loading("hide");
-			// if (data.status == 404){
-				// alert("Product not found.");
-			// }
-			// else {
-				// alter("Internal Server Error.");
-			// }
-		// }
-	// });
-// }
-
-
 
 
 //////////////////////////////////////////////////////////////////
@@ -234,6 +206,34 @@ $(document).on('pagebeforeshow', "#cart", function( event, ui ) {
 		}
 	});
 });
+
+function DeleteItem(){
+	$.mobile.loading("show");
+	var id = currentItem.id;
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/items/" + id,
+		method: 'delete',
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			$.mobile.loading("hide");
+			$.mobile.navigate("#cart");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			if (data.status == 404){
+				alert("Item not found.");
+			}
+			else {
+				alter("Internal Server Error.");
+			}
+		}
+	});
+}
+
+
+
 
 function UpdateItem(){
 	$.mobile.loading("show");
@@ -430,25 +430,123 @@ function SaveBid(){
 // });
 
 
-function loginVerification(){
-var username = document.getElementById('username');
-var password = document.getElementById('password');
-	if((username.value == "jose") && (password.value =="123")){
-		$.mobile.navigate("#menu");
+
+function loginVerification() {
+	  // var username = document.getElementById('usernameS').val();
+	  // var password = document.getElementById('passwordS').val();
+	// if((username.value == "jose") && (password.value =="123")){
+	// $.mobile.navigate("#menu");
+	// }
+	// else{
+	// alert("Error");
+	// }
+	//
+	// //alert("You entered: " + myTextField.value)
+
+	 var username = $("#usernameS").val();
+	 var password = $("#passwordS").val();
+// 	
+	// /var username = "Pathwalker";
+	// var password = "123";
+	var userList = data.users;
+	currentUser=1;
+	var isValidUser = 0;
+	for (var i = 0; i < userList.length; ++i) {
+		if (userList[i].username == username && userList[i].password == password) {
+			currentUser = userList[i];
+			isValidUser = 1;
+			
+		}
+
 	}
-	else{
-		alert("Error");
-		}			
-	
-		//alert("You entered: " + myTextField.value)
-	
-	
+	if (isValidUser == 1){
+					$.mobile.navigate("#menu");
+				}
+
+}
+
+
+
+///////////////////////////////////////////////////////////////credit cards
+
+//lista credit card
+var currentCcard = {};
+
+
+
+
+function GetCcard(id){
+	$.mobile.loading("show");
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/ccards/" + id,
+		method: 'get',
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			currentCcard = data.ccard;
+			$.mobile.loading("hide");
+			$.mobile.navigate("#ccard-view");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			if (data.status == 404){
+				alert("Ccard not found.");
+			}
+			else {
+				alter("Internal Server Error.");
+			}
+		}
+	});
+}
+
+$(document).on('pagebeforeshow', "#ccard-view", function( event, ui ) {
+	// currentProduct has been set at this point
+	$("#upd-cc-cardNumber").val(currentCcard.cardNumber);
+	$("#upd-cc-username").val(currentCcard.username);
+	$("#upd-cc-expDate").val(currentCcard.expDate);
+	$("#upd-cc-brand").val(currentCcard.brand);
+	$("#upd-cc-secCode").val(currentCcard.username);
+});
+
+
+
+function UpdateCcard(){
+	$.mobile.loading("show");
+	var form = $("#ccard-view-form");
+	var formData = form.serializeArray();
+	console.log("form Data: " + formData);
+	var updCcard = ConverToJSON(formData);
+	updCcard.id = currentCcard.id;
+	console.log("Updated Ccard: " + JSON.stringify(updCcard));
+	var updCcardJSON = JSON.stringify(updCcard);
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/ccards/" + updCcard.id,
+		method: 'put',
+		data : updCcardJSON,
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			$.mobile.loading("hide");
+			$.mobile.navigate("#creditcard");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			if (data.status == 404){
+				alert("Data could not be updated!");
+			}
+			else {
+				alert("Internal Error.");		
+			}
+		}
+	});
 }
 
 
 
 
-//lista credit card
+
 $(document).on('pagebeforeshow', "#creditcard", function( event, ui ) {
 	console.log("Jose");
 	$.ajax({
@@ -463,10 +561,10 @@ $(document).on('pagebeforeshow', "#creditcard", function( event, ui ) {
 			for (var i=0; i < len; ++i){
 				
 				ccard = ccardList[i];
-				list.append("<li><a onclick=GetCcard(" + ccard.id + ")>" + 
-					"<h2>CardNumber: " + ccard.cardNumber + "</h2>" +
-					"<p><strong>Username: "  + ccard.username +  "</strong></p>" +
-					"<p> Expiration Date: " + ccard.expDate + "</p>" + 
+				list.append("<li><a onclick=GetCcard(" + ccard.id + ")>" +  
+					"<h2> Card Number: " + ccard.cardNumber + "</h2>" +
+					"<p><strong> Username: "  + ccard.username +  "</strong></p>" +
+					"<p> Expiration Date:  " + ccard.expDate + "</p>" + 
 					"<p> Brand: " + ccard.brand + "</p>" +
 					"<p> Security Code: " + ccard.secCode + "</p>" +
 					"</a></li>");
@@ -479,6 +577,12 @@ $(document).on('pagebeforeshow', "#creditcard", function( event, ui ) {
 		}
 	});
 });
+
+
+
+
+//end credit cards
+//////////////////////////////////////////////////////////////////
 
 var currentItem = {};
 
@@ -541,10 +645,13 @@ function SaveItem(){
 /////////////////////////////////////////////////////////////////////////
 //get things of user
 var currentUser = {};
+
 // function searchUser(){
 	// GetUser(0);
 // 	
 // }
+
+///////////////////////////////////////GET VERDADERO
 function GetUser(id){
 	$.mobile.loading("show");
 	$.ajax({
@@ -572,9 +679,46 @@ function GetUser(id){
 }
 
 
+
+
+// $(document).on('pagebeforeshow', "#account-info", function( event, ui ) {
+	// console.log("Jose");
+	// $.ajax({
+		// url : "http://localhost:3412/BitmartServer/users",
+		// contentType: "application/json",
+		// success : function(data, textStatus, jqXHR){
+			// var userList = data.users;
+			// var len = userList.length;
+			// var list = $("#users-list");
+			// list.empty();
+			// var user;
+			// for (var i=0; i < len; ++i){
+// 				
+				// user = userList[i];
+				// list.append("<li><a onclick=GetUser(" + user.id + ")>" +  
+					// "<h2>" + user.username + "</h2>" +
+					// "<p><strong>"  + user.password +  "</strong></p>" +
+					// "<p> Year: " + user.firstname + "</p>" + 
+					// "<p>" + user.lastname + "</p>" +
+					// "<p>" + user.email + "</p>" +
+					// "<p>" + user.rating + "</p>" +
+// 
+					// "</a></li>");
+			// }
+			// list.listview("refresh");	
+		// },
+		// error: function(data, textStatus, jqXHR){
+			// console.log("textStatus: " + textStatus);
+			// alert("Data not found!");
+		// }
+	// });
+// });
+
+
+
+
 $(document).on('pagebeforeshow', "#account-info", function( event, ui ) {
-	// currentCar has been set at this point
-	
+		
 	$("#upd-am-username").val(currentUser.username);
 	$("#upd-am-password").val(currentUser.password);
 	$("#upd-am-firstname").val(currentUser.firstname);
