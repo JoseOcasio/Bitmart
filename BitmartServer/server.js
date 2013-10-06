@@ -445,7 +445,111 @@ app.get('/BitmartServer/ccards/:id', function(req, res) {
   		}	
 	}
 });
+
+
+
+
+
+// // REST Operation - HTTP PUT to updated a car based on its id
+// app.put('/BitmartServer/ccards/:id', function(req, res) {
+	// var id = req.params.id;
+		// console.log("PUT ccard: " + id);
+	// if ((id < 0) || (id >= ccardNextId)){
+		// // not found
+		// res.statusCode = 404;
+		// res.send("Ccard not found.");
+	// }
+	// else if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
+  	// || !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') || !req.body.hasOwnProperty('secCode')) {
+    	// res.statusCode = 400;
+    	// return res.send('Error: Missing fields for ccard.');
+  	// }
+	// else {
+		// var target = -1;
+		// for (var i=0; i < ccardList.length; ++i){
+			// if (ccardList[i].id == id){
+				// target = i;
+				// break;	
+			// }
+		// }
+		// if (target == -1){
+			// res.statusCode = 404;
+			// res.send("Ccard not found.");			
+		// }	
+		// else {
+			// var theCcard= ccardList[target];
+			// theCcard.cardNumber = req.body.carNumber;
+			// theCcard.username = req.body.username;
+			// theCcard.expDate = req.body.expDate;
+			// theCcard.brand = req.body.brand;
+			// theCcard.secCode = req.body.secCode;
+			// var response = {"Ccard" : theCcard};
+  			// res.json(response);		
+  		// }
+	// }
+// });
+
+
+///// post CC beggining
+// REST Operation - HTTP POST to add a new a car
+app.post('/BitmartServer/ccards', function(req, res) {
+	console.log("POST");
+// Remember comment
+  	if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
+  	|| !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') || !req.body.hasOwnProperty('secCode')) {
+  		
+    	res.statusCode = 400;
+    	return res.send('Error: Missing fields for product.');
+  	}
+  	var newCcard = new Ccard(req.body.cardNumber, req.body.username, req.body.expDate, req.body.brand, req.body.secCode);
+  	console.log("New Ccard: " + JSON.stringify(newCcard));
+  	newCcard.id = ccardNextId++;
+  	ccardList.push(newCcard);
+  	res.json(true);
+});
+///////end post CC
+/////////
 // REST Operation - HTTP PUT to updated a car based on its id
+// app.put('/BitmartServer/ccards/:id', function(req, res) {
+	// var id = req.params.id;
+		// console.log("PUT ccard: " + id);
+	// if ((id < 0) || (id >= ccardNextId)){
+		// // not found
+		// res.statusCode = 404;
+		// res.send("Credit Card not found.");
+	// }
+	// // Remember comment
+// 		
+	// else if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
+  	// || !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') ||!req.body.hasOwnProperty('secCode')) {
+    	// res.statusCode = 400;
+    	// return res.send('Error: Missing fields for ccards.');
+  	// }
+	// else {
+		// var target = -1;
+		// for (var i=0; i < ccardList.length; ++i){
+			// if (ccardList[i].id == id){
+				// target = i;
+				// break;	
+			// }
+		// }
+		// if (target == -1){
+			// res.statusCode = 404;
+			// res.send("Ccard not found.");			
+		// }	
+		// else {
+			// var theCcard = ccardList[target];
+			// theCcard.cardNumber = req.body.cardNumber;
+			// theCcard.username = req.body.username;
+			// theCcard.expDate = req.body.expDate;
+			// theCcard.brand = req.body.brand;
+			// theCcard.secCode = req.body.secCode;
+			// var response = {"ccard" : theCcard};
+  			// res.json(response);		
+  		// }
+	// }
+// });
+
 app.put('/BitmartServer/ccards/:id', function(req, res) {
 	var id = req.params.id;
 		console.log("PUT ccard: " + id);
@@ -473,7 +577,7 @@ app.put('/BitmartServer/ccards/:id', function(req, res) {
 		}	
 		else {
 			var theCcard= ccardList[target];
-			theCcard.cardNumber = req.body.carNumber;
+			theCcard.cardNumber = req.body.cardNumber;
 			theCcard.username = req.body.username;
 			theCcard.expDate = req.body.expDate;
 			theCcard.brand = req.body.brand;
@@ -483,6 +587,7 @@ app.put('/BitmartServer/ccards/:id', function(req, res) {
   		}
 	}
 });
+////////end put ccard
 // REST Operation - HTTP DELETE to delete a car based on its id
 app.del('/BitmartServer/ccards/:id', function(req, res) {
 	var id = req.params.id;
@@ -510,21 +615,21 @@ app.del('/BitmartServer/ccards/:id', function(req, res) {
   		}		
 	}
 });
-// REST Operation - HTTP POST to add a new a car
-app.post('/BitmartServer/ccards', function(req, res) {
-	console.log("POST");
-  	if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
-  	|| !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') || !req.body.hasOwnProperty('secCode')) {
-    	res.statusCode = 400;
-    	return res.send('Error: Missing fields for ccard.');
-  	}
-  	var newCcard = new Ccard(req.body.cardNumber, req.body.username, req.body.expDate, req.body.brand, req.body.secCode);
-  	console.log("New Ccard: " + JSON.stringify(newCcard));
-  	newCcard.id = ccardNextId++;
-  	ccardList.push(newCcard);
-  	res.json(true);
-});
-
+// // REST Operation - HTTP POST to add a new a car
+// app.post('/BitmartServer/ccards', function(req, res) {
+	// console.log("POST");
+  	// if(!req.body.hasOwnProperty('cardNumber') || !req.body.hasOwnProperty('username')
+  	// || !req.body.hasOwnProperty('expDate') || !req.body.hasOwnProperty('brand') || !req.body.hasOwnProperty('secCode')) {
+    	// res.statusCode = 400;
+    	// return res.send('Error: Missing fields for ccard.');
+  	// }
+  	// var newCcard = new Ccard(req.body.cardNumber, req.body.username, req.body.expDate, req.body.brand, req.body.secCode);
+  	// console.log("New Ccard: " + JSON.stringify(newCcard));
+  	// newCcard.id = ccardNextId++;
+  	// ccardList.push(newCcard);
+  	// res.json(true);
+// });
+// 
 
 
                                     

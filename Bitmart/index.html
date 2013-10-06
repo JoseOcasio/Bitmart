@@ -49,9 +49,7 @@
 			<div data-role="content">
 				<ul data-role="listview" data-inset="true" data-theme="d" data-filter="true" data-filter-placeholder="Search a category ...">
 					<li >
-						<a href="#books-menu" >
-							<p><img src="appjs/thumbnails/Olympus.jpg" align="middle" style="max-height: 50px" style="max-width: auto"> Books</p>
-						</a>
+						<a href="#books-menu" > Books</a>
 
 					</li>
 					<li>
@@ -513,6 +511,7 @@
 
 				<h1>Bitmart</h1>
 			</div>
+			
 			<div data-role="content">
 
 				<a href="#add-book" data-role="button" >List a Product</a>
@@ -524,8 +523,8 @@
 			data-position="fixed" data-theme="c">
 
 				<div data-role="controlgroup" data-type="horizontal">
-					<a href="#menu" data-role="button" data-icon="grid">Buying</a>
-					<a href="#selling" data-role="button" data-icon="grid">Selling</a>
+					<a href="#menu" data-role="button" data-icon="grid" data-theme="e">Buying</a>
+					<a href="#selling" data-role="button" data-icon="grid" data-theme="e">Selling</a>
 
 				</div>
 			</div>
@@ -562,13 +561,13 @@
 				<form name="form-login">
 
 					<!-- username -->
-					<label for="usernameS">Username</label>
-					<input id="usernameS"  title="Must be at least 8 characters."/>
+					<label for="usernameLogin">Username</label>
+					<input id="usernameLogin"  title="Must be at least 8 characters."/>
 					<br />
 
 					<!-- password -->
-					<label for="passwordS">Password</label>
-					<input id="passwordS" type="password" title="title it hard to guess." />
+					<label for="passwordLogin">Password</label>
+					<input id="passwordLogin" type="password" title="title it hard to guess." />
 					<br />
 
 					<p>
@@ -690,8 +689,7 @@
 			<div data-role="header" data-theme="a" data-position="fixed">
 				<h1>Book</h1>
 				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
-				<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-book"></a>
-			</div>
+				<!-- <a data-role="button" data-icon="add" data-iconpos="notext" href="#add-book"></a> -->			</div>
 			<div data-role="content">
 				<h3 style="text-align: center">Books Available</h3><div ></div>
 				<!--This is a comment. Comments are not displayed in the browser-->
@@ -978,6 +976,8 @@
 		<div id="ccard-view" data-role="page">
 			<div data-role="header" data-theme="a" data-position="fixed">
 				<a data-role="button" data-rel="back" href="#account">Cancel</a>
+				<a data-role="button" onclick="UpdateCcard()">Save</a>
+
 				<h1>Credit Card Info</h1>
 			</div>
 			<center>
@@ -987,27 +987,27 @@
 				<fieldset data-role="controlgroup">
 					<ul>
 						<li>
-							<label for="upd-cc-cardNumber"> Mail Address:
+							<label for="upd-cc-cardNumber"> Card Number:
 								<input id="upd-cc-cardNumber" name="cardNumber" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-cc-username"> City:
+							<label for="upd-cc-username"> Username:
 								<input id="upd-cc-username" name="username" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-cc-expDate"> Country:
+							<label for="upd-cc-expDate"> Expiration Date:
 								<input id="upd-cc-expDate" name="expDate" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-cc-brand"> Zip Code:
+							<label for="upd-cc-brand"> Brand:
 								<input id="upd-cc-brand" name="brand" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-cc-secCode"> Username:
+							<label for="upd-cc-secCode"> secCode:
 								<input id="upd-cc-secCode" name="secCode" type="text"/>
 							</label>
 						</li>
@@ -1015,12 +1015,57 @@
 					</ul>
 				</fieldset>
 			</form>
+			<center>
+				<a data-role="button" onclick="DeleteCcard()">Delete</a>
+			</center>
 			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
 			data-position="fixed" data-theme="a">
 
 			</div>
 		</div>
 
+<!-- add ccard beg-->
+<div id="add-ccard" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#creditcard">Cancel</a>
+				<h1>New Credit Card</h1>
+				<a data-role="button" onclick="SaveCcard()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new Credit Card info</h2>
+			</center>
+			<form id="ccard-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="cardNumber"> Credit card Number:
+								<input id="cardNumber" name="cardNumber" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="username"> Username:
+								<input id="username" name="username" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="expDate"> Expiration date:
+								<input id="expDate" name="expDate" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="brand"> Brand:
+								<input id="brand" name="brand" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="secCode"> Security Code:
+								<input id="secCode" name="secCode" type="number"/>
+							</label>
+						</li>						
+					</ul>
+				</fieldset>
+			</form>
+		</div>
 		<div id ="address-menu" data-role="page">
 			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
 				<ul data-role="listview" data-theme="h">
@@ -1054,6 +1099,8 @@
 		<div id="address-view" data-role="page">
 			<div data-role="header" data-theme="a" data-position="fixed">
 				<a data-role="button" data-rel="back" href="#account">Cancel</a>
+				<a data-role="button" onclick="UpdateAddress()">Save</a>
+
 				<h1>Address Info</h1>
 			</div>
 			<center>
@@ -1091,10 +1138,56 @@
 					</ul>
 				</fieldset>
 			</form>
+			<center>
+				<a data-role="button" onclick="DeleteAddress()">Delete</a>
+			</center>
 			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
 			data-position="fixed" data-theme="a">
 
 			</div>
+		</div>
+		
+		
+		<div id="add-address" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#address-menu">Cancel</a>
+				<h1>New Address</h1>
+				<a data-role="button" onclick="SaveAddress()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new Address info</h2>
+			</center>
+			<form id="address-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="mailAddress"> Mail Address:
+								<input id="mailAddress" name="mailAddress" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="city"> City:
+								<input id="city" name="city" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="country"> Country:
+								<input id="country" name="country" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="zipcode"> zipcode:
+								<input id="zipcode" name="zipcode" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="username"> Username:
+								<input id="username" name="username" type="text"/>
+							</label>
+						</li>						
+					</ul>
+				</fieldset>
+			</form>
 		</div>
 
 		<!-- end End Credit Card and Address pages -->
@@ -1306,7 +1399,7 @@
 				<fieldset data-role="controlgroup">
 					<ul>
 						<li>
-							<label for="upd-bidamount"> Product:
+							<label for="upd-bidamount"> $:
 								<input id="upd-bidamount" name="bidamount" type="text"/>
 							</label>
 						</li>

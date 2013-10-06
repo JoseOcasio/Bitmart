@@ -15,6 +15,7 @@ $(document).on('pagebeforeshow', "#books", function( event, ui ) {
 				
 				product = productList[i];
 				list.append("<li><a onclick=GetProduct(" + product.id + ")>" +  
+					"<img src=\"appjs/thumbnails/book.jpg\" align=\"middle\" style=\"max-height: 50px\" style=\"max-width: auto\" >" +
 					"<h2> " + product.name + "</h2>" +
 					"<p><strong>"  + product.model +  "</strong></p>" +
 					"<p> Description: " + product.description + "</p>" + 
@@ -443,14 +444,15 @@ function loginVerification() {
 	//
 	// //alert("You entered: " + myTextField.value)
 
-	 var username = $("#usernameS").val();
-	 var password = $("#passwordS").val();
+	 var username = $("#usernameLogin").val();
+	 var password = $("#passwordLogin").val();
 // 	
-	// /var username = "Pathwalker";
+	// var username = "Pathwalker";
 	// var password = "123";
 	var userList = data.users;
-	currentUser=1;
 	var isValidUser = 0;
+	
+	
 	for (var i = 0; i < userList.length; ++i) {
 		if (userList[i].username == username && userList[i].password == password) {
 			currentUser = userList[i];
@@ -459,8 +461,12 @@ function loginVerification() {
 		}
 
 	}
-	if (isValidUser == 1){
-					$.mobile.navigate("#menu");
+	if (isValidUser == 0){
+		alert("Error");
+				}
+				else{
+										$.mobile.navigate("#menu");
+
 				}
 
 }
@@ -471,8 +477,6 @@ function loginVerification() {
 
 //lista credit card
 var currentCcard = {};
-
-
 
 
 function GetCcard(id){
@@ -506,9 +510,42 @@ $(document).on('pagebeforeshow', "#ccard-view", function( event, ui ) {
 	$("#upd-cc-username").val(currentCcard.username);
 	$("#upd-cc-expDate").val(currentCcard.expDate);
 	$("#upd-cc-brand").val(currentCcard.brand);
-	$("#upd-cc-secCode").val(currentCcard.username);
+	$("#upd-cc-secCode").val(currentCcard.secCode);
 });
 
+
+
+// function UpdateCcard(){
+	// $.mobile.loading("show");
+	// var form = $("#ccard-view-form");
+	// var formData = form.serializeArray();
+	// console.log("form Data: " + formData);
+	// var updCcard = ConverToJSON(formData);
+	// updCcard.id = currentCcard.id;
+	// console.log("Updated Ccard: " + JSON.stringify(updCcard));
+	// var updCcardJSON = JSON.stringify(updCcard);
+	// $.ajax({
+		// url : "http://localhost:3412/BitmartServer/ccards/" + updCcard.id,
+		// method: 'put',
+		// data : updCcardJSON,
+		// contentType: "application/json",
+		// dataType:"json",
+		// success : function(data, textStatus, jqXHR){
+			// $.mobile.loading("hide");
+			// $.mobile.navigate("#creditcard");
+		// },
+		// error: function(data, textStatus, jqXHR){
+			// console.log("textStatus: " + textStatus);
+			// $.mobile.loading("hide");
+			// if (data.status == 404){
+				// alert("Data could not be updated!");
+			// }
+			// else {
+				// alert("Internal Error.");		
+			// }
+		// }
+	// });
+// }
 
 
 function UpdateCcard(){
@@ -543,7 +580,92 @@ function UpdateCcard(){
 	});
 }
 
+///////////save ccard beg
+function SaveCcard(){
+	$.mobile.loading("show");
+	var form = $("#ccard-form");
+	var formData = form.serializeArray();
+	console.log("form Data: " + formData);
+	var newCcard = ConverToJSON(formData);
+	console.log("New Ccard: " + JSON.stringify(newCcard));
+	var newCcardJSON = JSON.stringify(newCcard);
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/ccards",
+		method: 'post',
+		data : newCcardJSON,
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			$.mobile.loading("hide");
+			$.mobile.navigate("#creditcard");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			alert("Data could not be added!");
+		}
+	});
+}
 
+
+function DeleteCcard(){
+	$.mobile.loading("show");
+	var id = currentCcard.id;
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/ccards/" + id,
+		method: 'delete',
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			$.mobile.loading("hide");
+			$.mobile.navigate("#creditcard");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			if (data.status == 404){
+				alert("Ccard not found.");
+			}
+			else {
+				alter("Internal Server Error.");
+			}
+		}
+	});
+}
+/////save cc card end
+////updateccard begg
+// function UpdateCcard(){
+	// $.mobile.loading("show");
+	// var form = $("#ccard-view-form");
+	// var formData = form.serializeArray();
+	// console.log("form Data: " + formData);
+	// var updCcard = ConverToJSON(formData);
+	// updCcard.id = currentCcard.id;
+	// console.log("Updated Ccard: " + JSON.stringify(updCcard));
+	// var updCcardJSON = JSON.stringify(updCcard);
+	// $.ajax({
+		// url : "http://localhost:3412/BitmartServer/ccards/" + updCcard.id,
+		// method: 'put',
+		// data : updCcardJSON,
+		// contentType: "application/json",
+		// dataType:"json",
+		// success : function(data, textStatus, jqXHR){
+			// $.mobile.loading("hide");
+			// $.mobile.navigate("#creditcard");
+		// },
+		// error: function(data, textStatus, jqXHR){
+			// console.log("textStatus: " + textStatus);
+			// $.mobile.loading("hide");
+			// if (data.status == 404){
+				// alert("Data could not be updated!");
+			// }
+			// else {
+				// alert("Internal Error.");		
+			// }
+		// }
+	// });
+// }
+/////update ccard end
 
 
 
@@ -812,6 +934,94 @@ $(document).on('pagebeforeshow', "#address-view", function( event, ui ) {
 
 
 
+// function UpdateAddress(){
+	// $.mobile.loading("show");
+	// var form = $("#address-view-form");
+	// var formData = form.serializeArray();
+	// console.log("form Data: " + formData);
+	// var updAddress = ConverToJSON(formData);
+	// updAddress.id = currentAddress.id;
+	// console.log("Updated Address: " + JSON.stringify(updAddress));
+	// var updAddressJSON = JSON.stringify(updAddress);
+	// $.ajax({
+		// url : "http://localhost:3412/BitmartServer/addresses/" + updAddress.id,
+		// method: 'put',
+		// data : updAddressJSON,
+		// contentType: "application/json",
+		// dataType:"json",
+		// success : function(data, textStatus, jqXHR){
+			// $.mobile.loading("hide");
+			// $.mobile.navigate("#address-menu");
+		// },
+		// error: function(data, textStatus, jqXHR){
+			// console.log("textStatus: " + textStatus);
+			// $.mobile.loading("hide");
+			// if (data.status == 404){
+				// alert("Data could not be updated!");
+			// }
+			// else {
+				// alert("Internal Error.");		
+			// }
+		// }
+	// });
+// }
+
+
+///////////save address beg
+function SaveAddress(){
+	$.mobile.loading("show");
+	var form = $("#address-form");
+	var formData = form.serializeArray();
+	console.log("form Data: " + formData);
+	var newAddress = ConverToJSON(formData);
+	console.log("New Address: " + JSON.stringify(newAddress));
+	var newAddressJSON = JSON.stringify(newAddress);
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/addresses",
+		method: 'post',
+		data : newAddressJSON,
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			$.mobile.loading("hide");
+			$.mobile.navigate("#address-menu");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			alert("Data could not be added!");
+		}
+	});
+}
+/////save address end
+
+
+
+function DeleteAddress(){
+	$.mobile.loading("show");
+	var id = currentAddress.id;
+	$.ajax({
+		url : "http://localhost:3412/BitmartServer/addresses/" + id,
+		method: 'delete',
+		contentType: "application/json",
+		dataType:"json",
+		success : function(data, textStatus, jqXHR){
+			$.mobile.loading("hide");
+			$.mobile.navigate("#address-menu");
+		},
+		error: function(data, textStatus, jqXHR){
+			console.log("textStatus: " + textStatus);
+			$.mobile.loading("hide");
+			if (data.status == 404){
+				alert("Ccard not found.");
+			}
+			else {
+				alter("Internal Server Error.");
+			}
+		}
+	});
+}
+////update address begg
 function UpdateAddress(){
 	$.mobile.loading("show");
 	var form = $("#address-view-form");
@@ -843,7 +1053,7 @@ function UpdateAddress(){
 		}
 	});
 }
-
+/////update address end
 
 
 
@@ -865,7 +1075,7 @@ $(document).on('pagebeforeshow', "#address-menu", function( event, ui ) {
 				list.append("<li><a onclick=GetAddress(" + address.id + ")>" +  
 					"<h2>" + address.mailAddress + "</h2>" +
 					"<p><strong>"  + address.city +  "</strong></p>" +
-					"<p> Year: " + address.country + "</p>" + 
+					"<p> " + address.country + "</p>" + 
 					"<p>" + address.zipcode + "</p>" +
 					"<p>" + address.username + "</p>" +
 					"</a></li>");
