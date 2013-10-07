@@ -235,7 +235,7 @@ if(!req.body.hasOwnProperty('name') || !req.body.hasOwnProperty('model')
     	return res.send('Error: Missing fields for product.');
   	}
 
-  	var newItem = new Item(req.body.name, req.body.model, req.body.description, req.body.price, "","",req.body.username
+  	var newItem = new Item(req.body.name, req.body.model, req.body.description, req.body.price, req.body.bidprice, "","",req.body.username
   	, req.body.quantity, req.body.instorage);
   	console.log("New Item: " + JSON.stringify(newItem));
   	newItem.id = itemNextId++;

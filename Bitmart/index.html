@@ -38,8 +38,11 @@
 						<a href="#login" > Login</a>
 					</li>
 					<li>
-						<a href="#bid" > Bid History</a>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
+					<!-- <li>
+						<a href="#bid" > Bid History</a>
+					</li> -->
 				</ul>
 			</div><!-- /panel -->
 
@@ -101,6 +104,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed" >
@@ -146,6 +152,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
@@ -195,6 +204,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -240,6 +252,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -281,6 +296,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
@@ -324,6 +342,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -366,6 +387,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -407,6 +431,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
@@ -456,6 +483,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -504,6 +534,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 
@@ -550,6 +583,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
@@ -607,6 +643,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 			</div><!-- /panel -->
 
@@ -666,6 +705,77 @@
 		</div>
 		<!-- end Register page -->
 
+					<!-- admin options page -->
+					
+<div id ="adminOptions-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Admin Menu</h1>
+												<a data-role="button" data-icon="arrow-l" data-rel="back" href="#books">Cancel</a>
+
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-theme="b">
+					<li >
+						<a href="#reportSales" data-rel="popup" > Report of total sales</a>
+
+					</li>
+					<li>
+						<a href="#reportRevenues" data-rel="popup"> Report of total revenues</a>
+					</li>
+					
+				</ul>
+			</div>
+					<div data-role="popup" id="reportSales" data-position-to="window" data-theme="e">
+						<p>
+							<h3><strong>
+							<center>
+								Invoice of total sales:    
+							</center></strong></h3>
+							<p><center>Daily: 10</center></p>
+							<p><center>Weekly: 20</center></p>
+							<p><center>Monthly: 30</center></p>
+
+
+						<p>
+					</div>
+					
+					<div data-role="popup" id="reportRevenues" data-position-to="window" data-theme="e">
+						<p>
+							<h3><strong>
+							<center>
+								Invoice of total revenues:    
+							</center></strong></h3>
+							<p><center>Daily: $100</center></p>
+							<p><center>Weekly: $200</center></p>
+							<p><center>Monthly: $300</center></p>
+
+
+						<p>
+					</div>
+		</div>
+					<!-- end admin options page -->
 		<!-- books -->
 
 		<div id ="books" data-role="page">
@@ -686,6 +796,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -696,8 +809,11 @@
 				<h3 style="text-align: center">Books Available</h3><div ></div>
 				<!--This is a comment. Comments are not displayed in the browser-->
 				<p>
-					<a href="#" id="asc">Ascending</a>
-					Sort: <a href="#" class="link-sort-list asc">A-Z</a><a href="#" class="link-sort-list desc">Z-A</a>
+					<!-- <a href="#" id="asc">Sort</a> -->
+					Sort: <a href="#" class="link-sort-list asc">Price</a>
+					<a href="#" class="link-sort-list desc"> Brand</a>
+					<a href="#" class="link-sort-list desc"> Product name</a>
+
 				</p>
 				<!--This is a comment. Comments are not displayed in the browser-->
 				<ul
@@ -860,6 +976,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 			</div><!-- /panel -->
 
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -905,6 +1024,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 			</div><!-- /panel -->
 
@@ -972,6 +1094,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
@@ -1095,6 +1220,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
@@ -1223,6 +1351,9 @@
 					<li>
 						<a href="#login" > Login</a>
 					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
 				</ul>
 			</div><!-- /panel -->
 			<div data-role="header" data-theme="a" data-position="fixed">
@@ -1304,7 +1435,7 @@
 				<fieldset data-role="controlgroup">
 					<ul>
 						<li>
-							<label for="upd-name"> Name:
+							<label for="upd-nameI"> Name:
 								<input onkeypress="return false;" id="upd-nameI" name="name" type="text"/>
 							</label>
 						</li>
@@ -1314,32 +1445,32 @@
 							</label>
 						</li>
 						<li>
-							<label for="upd-description"> Description and Year:
+							<label for="upd-descriptionI"> Description and Year:
 								<input onkeypress="return false;" id="upd-descriptionI" name="description" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-price"> Price $:
+							<label for="upd-priceI"> Price $:
 								<input onkeypress="return false;" id="upd-priceI" name="price" type="number"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-bidprice"> Bid Price $:
+							<label for="upd-bidpriceI"> Bid Price $:
 								<input onkeypress="return false;" id="upd-bidpriceI" name="bidprice" type="number"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-username"> Seller:
+							<label for="upd-usernameI"> Seller:
 								<input onkeypress="return false;" id="upd-usernameI" name="username" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-quantity"> Quantity:
+							<label for="upd-quantityI"> Quantity:
 								<input onkeypress="return false;" id="upd-quantityI" name="quantity" type="text"/>
 							</label>
 						</li>
 						<li>
-							<label for="upd-instorage"> In Storage:
+							<label for="upd-instorageI"> In Storage:
 								<input onkeypress="return false;" id="upd-instorageI" name="instorage" type="text"/>
 							</label>
 						</li>
@@ -1489,6 +1620,9 @@
 					</li>
 					<li>
 						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
 					</li>
 				</ul>
 			</div><!-- /panel -->
