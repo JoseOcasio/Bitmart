@@ -10,6 +10,7 @@
 		<script src="js/accounting.js"></script>
 		<script src="appjs/product.js"></script>
 		<script src="appjs/address.js"></script>
+		<script src="appjs/user.js"></script>
 		<script src="appjs/app.js"></script>
 		<script src="appjs/ccard.js"></script>
 		<script src="appjs/thumbnails/Olympus.jpg"></script>
@@ -31,7 +32,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account"  > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -95,7 +96,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -141,7 +142,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -189,7 +190,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -234,7 +235,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -276,7 +277,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -318,7 +319,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -360,7 +361,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -402,7 +403,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -450,7 +451,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -498,7 +499,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -545,7 +546,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -571,13 +572,14 @@
 					<br />
 
 					<p>
-						<a data-role="button" onclick="loginVerification()" >Log In</a>
+						<a data-role="button" onclick="loginVerification()" data-theme="b">Log In</a>
+						
 					</p>
 
 					<label for="register">Don't have an account?</label>
 			</div>
 			<div data-role="content">
-				<a href="#register" data-role="button">Register</a>
+				<a href="#register" data-role="button" data-theme="b">Register</a>
 				</form>
 				
 				
@@ -601,7 +603,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -679,7 +681,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -737,6 +739,11 @@
 							</label>
 						</li>
 						<li>
+							<label for="bidprice"> Bid Price $:
+								<input id="bidprice" name="bidprice" type="number"/>
+							</label>
+						</li>
+						<li>
 							<label for="username"> Seller:
 								<input id="username" name="username" type="text"/>
 							</label>
@@ -785,6 +792,11 @@
 						<li>
 							<label for="upd-price"> Price $:
 								<input onkeypress="return false;" id="upd-price" name="price" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-bidprice"> Bid Price $:
+								<input onkeypress="return false;" id="upd-bidprice" name="bidprice" type="number"/>
 							</label>
 						</li>
 						<li>
@@ -843,7 +855,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -856,7 +868,7 @@
 			</div>
 			<div data-role="content">
 
-				<a data-role="button" href="#account-info " onclick="GetUser()" data-theme="b"> Account Information</a>
+				<a data-role="button" href="#account-info "  data-theme="b"> Account Information</a>
 
 				<a data-role="button" href="#address-menu"  data-theme="b">Address</a>
 
@@ -889,7 +901,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -898,12 +910,12 @@
 
 			<div data-role="header" data-theme="a" data-position="fixed">
 				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
-				<a href="#saveAccount" data-role="button" data-icon="edit">Save</a>
+			<!--	<a href="#saveAccount" data-role="button" onClick = "UpdateUser()" data-icon="edit">Save</a>  /panel -->
 				<h1>Account Information</h1>
 			</div>
 			<div data-role="content">
 
-				<form id="user-view-form">
+				<form id="user-viewnew-form">
 					<fieldset data-role="controlgroup">
 						<ul>
 							<li>
@@ -956,7 +968,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -1079,7 +1091,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -1206,7 +1218,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>
@@ -1309,6 +1321,11 @@
 						<li>
 							<label for="upd-price"> Price $:
 								<input onkeypress="return false;" id="upd-priceI" name="price" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-bidprice"> Bid Price $:
+								<input onkeypress="return false;" id="upd-bidpriceI" name="bidprice" type="number"/>
 							</label>
 						</li>
 						<li>
@@ -1468,7 +1485,7 @@
 						<a href="#cart" > Cart</a>
 					</li>
 					<li>
-						<a href="#account" > Account</a>
+						<a href="#account" onclick="searchUser()" > Account</a>
 					</li>
 					<li>
 						<a href="#login" > Login</a>

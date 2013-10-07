@@ -27,11 +27,11 @@ var Product = product.Product;
 
 var productList = new Array(
 	// Product(id, name, model, description, price, photo, brand, username, quantity, inStorage)
-	new Product("La Llamarada", "Enrique Laguerre", "New 2010", "25", "photo", "Book", "JammyVM", "5", "3"),
-	new Product("La Charca", "Manuel Zeno Gandia", "Used 2009", "10", "photo",  "Book", "JammyVM", "6", "4"),
-	new Product("Physics 2nd Ed", "Giancoli", "Used 1990", "3", "photo",  "Book", "JammyVM", "1", "1"),
-	new Product("Calculus 7th Ed", "James Stewart", "Used 1999", "7", "photo",  "Book", "JammyVM", "6", "4"),
-	new Product("Data Structures 2nd Ed", "Manuel Perez", "Used 2001", "10", "photo",  "Book", "JammyVM", "6", "4")	
+	new Product("La Llamarada", "Enrique Laguerre", "New 2010", "25", "5" ,"photo", "Book", "JammyVM", "5", "3"),
+	new Product("La Charca", "Manuel Zeno Gandia", "Used 2009", "10", "5" , "photo",  "Book", "JammyVM", "6", "4"),
+	new Product("Physics 2nd Ed", "Giancoli", "Used 1990", "3", "5" , "photo",  "Book", "JammyVM", "1", "1"),
+	new Product("Calculus 7th Ed", "James Stewart", "Used 1999", "7", "5" , "photo",  "Book", "JammyVM", "6", "4"),
+	new Product("Data Structures 2nd Ed", "Manuel Perez", "Used 2001", "10", "5" , "photo",  "Book", "JammyVM", "6", "4")
 );
 
 
@@ -137,10 +137,9 @@ var ccardList = new Array(
 var item = require("./item.js");
 var Item = item.Item;
 var itemList = new Array(
-	new Item("Stripes Shirt", "Volcom", "Medium", "14.99", "",  "Volcom", "JammyVM", "10", "5")
+	new Item("Stripes Shirt", "Volcom", "Medium", "14.99", "5" , "",  "Volcom", "JammyVM", "10", "5")
 
 );
-
 
 
 // REST Operation - HTTP DELETE to delete an item based on its id
@@ -229,7 +228,7 @@ app.post('/BitmartServer/items', function(req, res) {
 	console.log("POST");
 
 if(!req.body.hasOwnProperty('name') || !req.body.hasOwnProperty('model')
-  	|| !req.body.hasOwnProperty('description') || !req.body.hasOwnProperty('price') ||/* !req.body.hasOwnProperty('photo')
+  	|| !req.body.hasOwnProperty('description') || !req.body.hasOwnProperty('price') || !req.body.hasOwnProperty('bidprice')  ||/* !req.body.hasOwnProperty('photo')
   	||  !req.body.hasOwnProperty('brand') || */ !req.body.hasOwnProperty('username') ||  !req.body.hasOwnProperty('quantity')
   	||  !req.body.hasOwnProperty('instorage')) {
     	res.statusCode = 400;
@@ -314,7 +313,7 @@ app.put('/BitmartServer/products/:id', function(req, res) {
 	}
 	// Remember comment
 	else if(!req.body.hasOwnProperty('name') || !req.body.hasOwnProperty('model')
-  	|| !req.body.hasOwnProperty('description') || !req.body.hasOwnProperty('price') /*|| !req.body.hasOwnProperty('photo')
+  	|| !req.body.hasOwnProperty('description') || !req.body.hasOwnProperty('price') || !req.body.hasOwnProperty('bidprice') /*|| !req.body.hasOwnProperty('photo')
   	||  !req.body.hasOwnProperty('brand') */||  !req.body.hasOwnProperty('username') ||  !req.body.hasOwnProperty('quantity')
   	||  !req.body.hasOwnProperty('instorage')) {
     	res.statusCode = 400;
@@ -338,13 +337,14 @@ app.put('/BitmartServer/products/:id', function(req, res) {
 			theProduct.model = req.body.model;
 			theProduct.description = req.body.description;
 			theProduct.price = req.body.price;
+			theProduct.bidprice = req.body.bidprice;
 			theProduct.photo = "req.body.photo";
 			theProduct.brand = "req.body.brand";
 			theProduct.username = req.body.username;
 			theProduct.quantity = req.body.quantity;
 			theProduct.instorage = req.body.instorage;
 			var response = {"product" : theProduct};
-  			res.json(response);		
+  			res.json(response);
   		}
 	}
 });
@@ -383,7 +383,7 @@ app.post('/BitmartServer/products', function(req, res) {
 	console.log("POST");
 // Remember comment
   	if(!req.body.hasOwnProperty('name') || !req.body.hasOwnProperty('model')
-  	|| !req.body.hasOwnProperty('description') || !req.body.hasOwnProperty('price') ||/* !req.body.hasOwnProperty('photo')
+  	|| !req.body.hasOwnProperty('description') || !req.body.hasOwnProperty('price') || !req.body.hasOwnProperty('bidprice')||/* !req.body.hasOwnProperty('photo')
   	||  !req.body.hasOwnProperty('brand') || */ !req.body.hasOwnProperty('username') ||  !req.body.hasOwnProperty('quantity')
   	||  !req.body.hasOwnProperty('instorage')) {
   		
@@ -391,7 +391,7 @@ app.post('/BitmartServer/products', function(req, res) {
     	return res.send('Error: Missing fields for product.');
   	}
 
-  	var newProduct = new Product(req.body.name, req.body.model, req.body.description, req.body.price, "req.body.photo",
+  	var newProduct = new Product(req.body.name, req.body.model, req.body.description, req.body.price, req.body.bidprice, "req.body.photo",
   		"req.body.brand", req.body.username, req.body.quantity, req.body.instorage);
   	console.log("New Product: " + JSON.stringify(newProduct));
   	newProduct.id = productNextId++;
@@ -646,11 +646,6 @@ app.del('/BitmartServer/ccards/:id', function(req, res) {
 
 
 
-app.get('/BitmartServer/users', function(req, res) {
-	console.log("GET");
-	var response = {"users" : userList};
-	res.json(response);
-});
 
 
  var userNextId = 0;
@@ -659,6 +654,11 @@ for (var i=0; i < userList.length;++i){
 	userList[i].id = userNextId++;
 }
 
+app.get('/BitmartServer/users', function(req, res) {
+	console.log("GET");
+	var response = {"users" : userList};
+	res.json(response);
+});
 
 
 
@@ -685,7 +685,7 @@ app.get('/BitmartServer/users/:id', function(req, res) {
 			res.send("user not found.");
 		}
 		else {
-			var response = {"users" : userList[target]};
+			var response = {"user" : userList[target]};
   			res.json(response);	
   		}	
 	}
@@ -704,7 +704,7 @@ app.put('/BitmartServer/users/:id', function(req, res) {
 	// Remember comment
 	else if(!req.body.hasOwnProperty('username') || !req.body.hasOwnProperty('password')
   	|| !req.body.hasOwnProperty('firstname') || !req.body.hasOwnProperty('lastname') 
-  	||  !req.body.hasOwnProperty('email')) {
+  	||  !req.body.hasOwnProperty('email') ||  !req.body.hasOwnProperty('rating')) {
     	res.statusCode = 400;
     	return res.send('Error: Missing fields for user.');
   	}
@@ -727,6 +727,8 @@ app.put('/BitmartServer/users/:id', function(req, res) {
 			theUser.firstname = req.body.firstname;
 			theUser.lastname = req.body.lastname;
 			theUser.email = req.body.email;
+			theUser.rating = req.body.rating;
+			var response = {"User" : theUser};
 			res.json(response);		
   		}
 	}
@@ -767,14 +769,14 @@ app.post('/BitmartServer/users', function(req, res) {
 // Remember comment
   	if(!req.body.hasOwnProperty('username') || !req.body.hasOwnProperty('password')
   	|| !req.body.hasOwnProperty('firstname') || !req.body.hasOwnProperty('lastname') ||
-  	 !req.body.hasOwnProperty('email') ) {
+  	 !req.body.hasOwnProperty('email') ||  !req.body.hasOwnProperty('rating')) {
   		
     	res.statusCode = 400;
     	return res.send('Error: Missing fields for user.');
   	}
 
   	var newuser = new User(req.body.username, req.body.password, req.body.firstname, req.body.lastname,
-  		 req.body.email);
+  		 req.body.email, req.body.rating);
   	console.log("New User: " + JSON.stringify(newUser));
   	newUser.id = userNextId++;
   	userList.push(newUser);

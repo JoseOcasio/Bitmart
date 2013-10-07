@@ -20,6 +20,7 @@ $(document).on('pagebeforeshow', "#books", function( event, ui ) {
 					"<p>"  + product.model +  "</p>" +
 					//"<p> Description: " + product.description + "</p>" + 
 					"<p class=\"ui-li-aside\">" + accounting.formatMoney(product.price) + "</p>" +
+					"<p> Bid:" + accounting.formatMoney(product.bidprice) + "</p>" +
 					//"<p> Seller: " + product.username + "</p>" + 
 					//"<p> Quantity: " + product.quantity + "</p>" + 
 					//"<p> In Storage: " + product.instorage + "</p>" + 
@@ -40,6 +41,7 @@ $(document).on('pagebeforeshow', "#book-view", function( event, ui ) {
 	$("#upd-model").val(currentProduct.model);
 	$("#upd-description").val(currentProduct.description);
 	$("#upd-price").val(currentProduct.price);
+	$("#upd-bidprice").val(currentProduct.bidprice);
 	$("#upd-username").val(currentProduct.username);
 	$("#upd-quantity").val(currentProduct.quantity);
 	$("#upd-instorage").val(currentProduct.instorage);
@@ -194,6 +196,7 @@ $(document).on('pagebeforeshow', "#cart", function( event, ui ) {
 					"<p>"  + item.model +  "</p>" +
 					//"<p> Description: " + item.description + "</p>" +
 					"<p class=\"ui-li-aside\">" + accounting.formatMoney(item.price) + "</p>" +
+					"<p>" + accounting.formatMoney(item.bidprice) + "</p>" +
 					//"<p> Seller: " + item.username + "</p>" +
 					//"<p> Quantity: " + item.quantity + "</p>" +
 					//"<p> In Storage: " + item.instorage + "</p>" +
@@ -275,6 +278,7 @@ $(document).on('pagebeforeshow', "#item-view", function( event, ui ) {
 	$("#upd-modelI").val(currentItem.model);
 	$("#upd-descriptionI").val(currentItem.description);
 	$("#upd-priceI").val(currentItem.price);
+	$("#upd-bidpriceI").val(currentItem.bidprice);
 	$("#upd-usernameI").val(currentItem.username);
 	$("#upd-quantityI").val(currentItem.quantity);
 	$("#upd-instorageI").val(currentItem.instorage);
@@ -430,7 +434,7 @@ function SaveBid(){
     // e.preventDefault();
 // });
 
-
+var currentUser = {};
 
 function loginVerification() {
 	  // var username = document.getElementById('usernameS').val();
@@ -449,9 +453,11 @@ function loginVerification() {
 // 	
 	// var username = "Pathwalker";
 	// var password = "123";
-	var userList = data.users;
-	var isValidUser = 0;
 	
+	alert("hello");
+	var userList = data.user;
+	
+	var isValidUser = 0;
 	
 	for (var i = 0; i < userList.length; ++i) {
 		if (userList[i].username == username && userList[i].password == password) {
@@ -733,45 +739,45 @@ function GetItem(id){
 	});
 }
 
-function SaveItem(){
-	$.mobile.loading("show");
-	var form = $("#book-view-form");   //el add to cart
-	var formData = form.serializeArray();
-	console.log("form Data: " + formData);
-	var newItem = ConverToJSON(formData);
-	console.log("New Item: " + JSON.stringify(newItem));
-	var newItemJSON = JSON.stringify(newItem);
-	$.ajax({
-		url : "http://localhost:3412/BitmartServer/items",
-		method: 'post',
-		data : newItemJSON,
-		contentType: "application/json",
-		dataType:"json",
-		success : function(data, textStatus, jqXHR){
-			$.mobile.loading("hide");
-			$.mobile.navigate("#cart");
-		},
-		error: function(data, textStatus, jqXHR){
-			console.log("textStatus: " + textStatus);
-			$.mobile.loading("hide");
-			alert("Data could not be added!");
-		}
-	});
-
-
-}
+// function SaveItem(){
+	// $.mobile.loading("show");
+	// var form = $("#book-view-form");   //el add to cart
+	// var formData = form.serializeArray();
+	// console.log("form Data: " + formData);
+	// var newItem = ConverToJSON(formData);
+	// console.log("New Item: " + JSON.stringify(newItem));
+	// var newItemJSON = JSON.stringify(newItem);
+	// $.ajax({
+		// url : "http://localhost:3412/BitmartServer/items",
+		// method: 'post',
+		// data : newItemJSON,
+		// contentType: "application/json",
+		// dataType:"json",
+		// success : function(data, textStatus, jqXHR){
+			// $.mobile.loading("hide");
+			// $.mobile.navigate("#cart");
+		// },
+		// error: function(data, textStatus, jqXHR){
+			// console.log("textStatus: " + textStatus);
+			// $.mobile.loading("hide");
+			// alert("Data could not be added!");
+		// }
+	// });
+// 
+// 
+// }
 //end credit card
 ///////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////
 //get things of user
-var currentUser = {};
+var currentUser1 = {};
 
-// function searchUser(){
-	// GetUser(0);
-// 	
-// }
+function searchUser(){
+	GetUser(0);
+	
+}
 
 ///////////////////////////////////////GET VERDADERO
 function GetUser(id){
@@ -782,9 +788,9 @@ function GetUser(id){
 		contentType: "application/json",
 		dataType:"json",
 		success : function(data, textStatus, jqXHR){
-			currentUser = data.user;
+			currentUser1 = data.user;
 			$.mobile.loading("hide");
-			$.mobile.navigate("#account-info");
+			$.mobile.navigate("#account");
 							
 		},
 		error: function(data, textStatus, jqXHR){
@@ -841,23 +847,23 @@ function GetUser(id){
 
 $(document).on('pagebeforeshow', "#account-info", function( event, ui ) {
 		
-	$("#upd-am-username").val(currentUser.username);
-	$("#upd-am-password").val(currentUser.password);
-	$("#upd-am-firstname").val(currentUser.firstname);
-	$("#upd-am-lastname").val(currentUser.lastname);
-	$("#upd-am-email").val(currentUser.email);
-	$("#upd-am-rating").val(currentUser.rating);
+	$("#upd-am-username").val(currentUser1.username);
+	$("#upd-am-password").val(currentUser1.password);
+	$("#upd-am-firstname").val(currentUser1.firstname);
+	$("#upd-am-lastname").val(currentUser1.lastname);
+	$("#upd-am-email").val(currentUser1.email);
+	$("#upd-am-rating").val(currentUser1.rating);
 
 	
 });
 
 function UpdateUser(){
 	$.mobile.loading("show");
-	var form = $("#user-view-form");
+	var form = $("#user-viewnew-form");
 	var formData = form.serializeArray();
 	console.log("form Data: " + formData);
 	var updUser = ConverToJSON(formData);
-	updUser.id = currentUser.id;
+	updUser.id = currentUser1.id;
 	console.log("Updated User: " + JSON.stringify(updUser));
 	var updUserJSON = JSON.stringify(updUser);
 	$.ajax({
@@ -868,7 +874,7 @@ function UpdateUser(){
 		dataType:"json",
 		success : function(data, textStatus, jqXHR){
 			$.mobile.loading("hide");
-			//$.mobile.navigate("#books");
+			$.mobile.navigate("#account");
 		},
 		error: function(data, textStatus, jqXHR){
 			console.log("textStatus: " + textStatus);
