@@ -192,6 +192,8 @@ $(document).on('pagebeforeshow', "#cart", function( event, ui ) {
 				item = itemList[i];
 				list.append("<li>  <a onclick=GetItem(" + item.id + ")>" +
 					"<p> "  +  item.name + "</p>" +
+										"<img src=\"appjs/thumbnails/book.jpg\" align=\"middle\" style=\"max-height: 50px\" style=\"max-width: auto\" >" +
+
 					//"<img src =http://jqfaq.com/wp-content/uploads/logo_v1.png>"+
 					"<p>"  + item.model +  "</p>" +
 					//"<p> Description: " + item.description + "</p>" +
