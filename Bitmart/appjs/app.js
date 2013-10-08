@@ -334,7 +334,7 @@ $(document).on('pagebeforeshow', "#bid", function( event, ui ) {
 				bid = bidList[i];
 				list.append("<li>  <a onclick=GetItem(" + bid.id + ")>" +
 					"<h2> "  +  bid.bidproduct + "</h2>" +
-					"<img src =http://jqfaq.com/wp-content/uploads/logo_v1.png>"+
+					"<img src=\"appjs/thumbnails/book.jpg\" align=\"middle\" style=\"max-height: 50px\" style=\"max-width: auto\" >" +
 					"<p><strong>"  + bid.bidusername +  "</strong></p>" +					
 					"<p class=\"ui-li-aside\">" + accounting.formatMoney(bid.bidamount) + "</p>" +					
 					"</a></li>");
