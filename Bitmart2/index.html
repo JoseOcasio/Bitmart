@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<title>Bitmart</title>
+		<meta http-equiv="refresh" content="800">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery.mobile-1.3.1.js"></script>
+		<script src="js/accounting.js"></script>
+		<script src="appjs/category.js"></script>
+		<script src="appjs/app.js"></script>
+	</head>
+	<body>
+		
+		<!-- Main menu-->
+		<div id ="menus" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+					<!-- <li>
+						<a href="#bid" > Bid History</a>
+					</li> -->
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Menu</h1>
+				
+			</div>
+			<div data-role="content">
+					
+				<ul id="menus-list" data-theme="b" data-role="listview" data-inset="true">
+				</ul>
+			</div>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-role="button" data-icon="grid" data-theme="e">Buying</a>
+					<a onclick="sellingver()" data-role="button" data-icon="grid" data-theme="e">Selling</a>
+
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- Sub Menu -->
+		
+		<div id ="submenus" data-role="page">
+			
+			
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+					<!-- <li>
+						<a href="#bid" > Bid History</a>
+					</li> -->
+				</ul>
+			</div> 
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Sub Menu</h1>
+				
+			</div>
+			<div data-role="content">
+				
+				<ul id="submenus-list" data-theme="b" data-role="listview" data-inset="true">
+				</ul>
+			</div>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-role="button" data-icon="grid" data-theme="e">Buying</a>
+					<a onclick="sellingver()" data-role="button" data-icon="grid" data-theme="e">Selling</a>
+
+				</div>
+			</div>
+		</div>
+
+<!-- Sub Menu 2-->
+		
+		<div id ="submenus2" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+					<!-- <li>
+						<a href="#bid" > Bid History</a>
+					</li> -->
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Sub Menu</h1>
+				
+			</div>
+			<div data-role="content">
+				
+				<ul id="submenus2-list" data-theme="b" data-role="listview" data-inset="true">
+				</ul>
+			</div>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-role="button" data-icon="grid" data-theme="e">Buying</a>
+					<a onclick="sellingver()" data-role="button" data-icon="grid" data-theme="e">Selling</a>
+
+				</div>
+			</div>
+			
+		</div>
+
+
+		<!-- Items Menu -->
+		
+		<div id ="itemmenus" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+					<!-- <li>
+						<a href="#bid" > Bid History</a>
+					</li> -->
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Item Menu</h1>
+				
+			</div>
+			<div data-role="content">
+					
+				<ul id="itemmenus-list" data-theme="b" data-role="listview" data-inset="true">
+				</ul>
+			</div>
+		</div>
+
+		<!-- Product View -->
+		
+		<div id="product-view" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#books">Cancel</a>
+				<h1>Product Info</h1>
+			</div>
+			<center>
+				<h2>Details</h2>
+			</center>
+			<form id="product-view-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							
+							<label for="upd-name"> Name:
+								<input onkeypress="return false;" id="upd-name" name="pname" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-model"> Model/Author:
+								<input onkeypress="return false;" id="upd-model" name="pmodel" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-description"> Description and Year:
+								<input onkeypress="return false;" id="upd-description" name="pdescription" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-price"> Price $:
+								<input onkeypress="return false;" id="upd-price" name="pprice" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-bidprice"> Bid Price $:
+								<input onkeypress="return false;" id="upd-bidprice" name="pbidprice" type="number"/>
+							</label>
+						</li>
+						
+						<li>
+							<label for="upd-seller"> Seller:
+								<input onkeypress="return false;" id="upd-seller" name="uid" type="text"/>
+							</label>
+						</li>
+						
+						<li>
+							<label for="upd-quantity"> Quantity:
+								<input onkeypress="return false;" id="upd-quantity" name="pquantity" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-instorage"> In Storage:
+								<input onkeypress="return false;" id="upd-instorage" name="pinstorage" type="text"/>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+		
+			
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+				<div data-role="controlgroup" data-type="horizontal">
+					<a  data-role="button"  data-icon="add" onclick="SaveItem()" data-theme="b">Add to Cart</a>
+					<a data-role="button" data-icon="grid" onclick="buynow()"  data-theme="b">Buy Now</a>
+					<a href="#bid-amount" data-role="button" data-icon="grid" data-theme="b">Bid</a> <!-- joseph -->
+
+				</div>
+			</div>
+		</div>
+		<!-- end books -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="selling" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+
+				<h1>List a Product to sell</h1>
+                       </div>
+                       
+                       <div data-role="content">
+                               <h4 style="text-align:center"> Select the category</h4>
+                               
+                                       
+                               <ul id="pbrand-list" data-theme="b" data-role="listview" data-inset="true">
+                               </ul>
+                       
+
+                       <div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+                       data-position="fixed" data-theme="a">
+
+                               <div data-role="controlgroup" data-type="horizontal">
+                                       <a href="#menus" data-role="button" data-icon="grid" data-theme="e">Buying</a>
+                                       
+                               </div>
+                       </div>
+               </div>
+       </div>
+		<!--  end selling page -->
+
+		<!-- login page -->
+		<div id="login" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Log In</h1>
+			</div>
+			<div data-role="content">
+				<form name="form-login">
+
+					<!-- username -->
+					<label for="usernameLogin">Username</label>
+					<input id="usernameLogin"  title="Write your username."/>
+					<br />
+
+					<!-- password -->
+					<label for="passwordLogin">Password</label>
+					<input id="passwordLogin" type="password" title="Must Be at least 8 characters" />
+					<br />
+
+					<p>
+						<a data-role="button" onclick="loginVerification()" data-theme="b">Log In</a>
+						
+					</p>
+
+					<label for="register">Don't have an account?</label>
+			</div>
+			<div data-role="content">
+				<a href="#register"  data-role="button" data-theme="b">Register</a>
+				</form>
+				
+			</div>
+				<div data-role="content">
+                               <label for="admin"><a href="#adminlog">Admin Log In</a></label>
+            </div>
+		</div>
+		<!-- end login page -->
+
+		<!-- register page -->
+
+		<div id="register" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Register</h1>
+			</div>
+			<div data-role="content">
+				<form id="register-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+
+				<!-- Username -->
+				<label for="username">Username</label>
+				<input id="regusername" type="text" name="username" title="title it hard to guess." />
+
+				<!-- password -->
+				<label for="password">Password</label>
+				<input id="regpassword" type="password" name="upassword" title="title it hard to guess." />
+
+				<!-- name -->
+				<label for="regname">First Name</label>
+				<input id="regfirstname" type="text" name="ufirstname" title="title it hard to guess." />
+
+				<!-- last name -->
+				<label for="reglastName">Last Name</label>
+				<input id="reglastName" type="text" name="ulastname" title="title it hard to guess." />
+
+				
+				<!-- email -->
+				<label for="regemail">Email</label>
+				<input id="regemail" type="text" name="uemail" title="title it hard to guess." />
+
+				</ul></fieldset></form>
+				
+
+				<a  onClick = "register()" data-role="button" 
+				 data-transition="flip" data-theme="b">Register</a>
+					
+				
+			</div>
+		</div>
+		<!-- end Register page -->
+
+					<!-- admin options page -->
+					
+		<div id ="adminOptions-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Admin Menu</h1>
+			
+
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-theme="b">
+					<li >
+						<a href="#reportSales" data-rel="popup" > Report of total sales</a>
+
+					</li>
+					<li >
+						<a href="#addcategory" > Add a new category</a>
+
+					</li>
+					<li >
+						<a href="#deletecategory" > Delete a category</a>
+
+					</li>
+					<li>
+						<a href="#reportRevenues" data-rel="popup"> Report of total revenues</a>
+					</li>
+					
+				</ul>
+			</div>
+					<div data-role="popup" id="reportSales" data-position-to="window" data-theme="e">
+						<p>
+							<h3><strong>
+							<center>
+								Invoice of total sales:    
+							</center></strong></h3>
+							<p><center>Daily: 10</center></p>
+							<p><center>Weekly: 20</center></p>
+							<p><center>Monthly: 30</center></p>
+
+
+						<p>
+					</div>
+					
+					<div data-role="popup" id="reportRevenues" data-position-to="window" data-theme="e">
+						<p>
+							<h3><strong>
+							<center>
+								Invoice of total revenues:    
+							</center></strong></h3>
+							<p><center>Daily: $100</center></p>
+							<p><center>Weekly: $200</center></p>
+							<p><center>Monthly: $300</center></p>
+
+
+						<p>
+					</div>
+		</div>
+					<!-- end admin options page -->
+		<!-- books -->
+
+		<div id="add-product" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#itemmenus">Cancel</a>
+				<h1>New Product</h1>
+				<a data-role="button" data-rel="back" onclick="SaveProduct()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new product info</h2>
+			</center>
+			<form id="product-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="name"> Name:
+								<input id="new-name" name="pname" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="model"> Model/Author:
+								<input id="new-model" name="pmodel" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="description"> Description and Year:
+								<input id="new-description" name="pdescription" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="price"> Price $:
+								<input id="new-price" name="pprice" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="bidprice"> Bid Price $:
+								<input id="new-bidprice" name="pbidprice" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-photo"> Photo:
+								<input  id="new-photo" name="pphoto" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="quantity"> Quantity:
+								<input id="new-quantity" name="pquantity" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="instorage"> In Storage:
+								<input id="new-instorage" name="pinstorage" type="number"/>
+							</label>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- account -->
+
+		<div id="account" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<h1>Account Management</h1>
+			</div>
+			<div data-role="content">
+
+				<a data-role="button" href="#account-info "  data-theme="b"> Account Information</a>
+
+				<a data-role="button" href="#address-menu"  data-theme="b">Address</a>
+
+				<a data-role="button" href="#creditcard"  data-theme="b">Credit Card</a>
+
+				<a data-role="button" href="#itemmenus"  data-theme="b">Products Sold</a>
+				
+				<a data-role="button" href="#bidevent"  data-theme="b">Bid Event</a>
+
+				<a data-role="button" href="#bid"  data-theme="b">Bid History</a>
+
+				<a data-role="button" href="#itemmenus"  data-theme="b">Products Purchased</a>
+
+				<a data-role="button" href="#bankaccount-menu"  data-theme="b">Bank Account</a>
+
+			</div>
+
+		</div>
+
+		<!-- Jammy-->
+
+		<div id="account-info" data-role="page">
+			<div data-role="panel"  id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+			</div><!-- /panel -->
+
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			<!--	<a href="#saveAccount" data-role="button" onClick = "UpdateUser()" data-icon="edit">Save</a>  /panel -->
+				<h1>Account Information</h1>
+			</div>
+			<div data-role="content">
+
+				<form id="user-viewnew-form">
+					<fieldset data-role="controlgroup">
+						<ul>
+							<li>
+								<label for="upd-am-username"> Username:
+									<input  id="upd-am-username" name="username" type="text"/>
+								</label>
+							</li>
+							<li>
+								<label for="upd-am-password"> Password:
+									<input  id="upd-am-password" name="upassword" type="password"/>
+								</label>
+							</li>
+							<li>
+								<label for="upd-am-firstname"> First Name:
+									<input  id="upd-am-firstname" name="ufirstname" type="text"/>
+								</label>
+							</li>
+							<li>
+								<label for="upd-am-lastname"> Last Name:
+									<input  id="upd-am-lastname" name="ulastname" type="text"/>
+								</label>
+							</li>
+							<li>
+								<label for="upd-am-email"> Email:
+									<input  id="upd-am-email" name="uemail" type="text"/>
+								</label>
+							</li>
+							<li>
+								<label for="upd-am-rating"> Rating:
+									<input  id="upd-am-rating" name="urating" type="number"/>
+								</label>
+							</li>
+						</ul>
+					</fieldset>
+			</div>
+		</div>
+		<!-- end account -->
+
+		<!-- Credit Card and Address pages -->
+		<div id ="creditcard" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Credit Card</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-ccard"></a>
+			</div>
+			<div data-role="content">
+				<ul id="ccards-list" data-theme="b" data-role="listview" data-theme="b" data-inset="true" ></ul>
+			</div>
+		</div>
+
+		<div id="ccard-view" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#account">Cancel</a>
+				<!-- <a data-role="button" onclick="UpdateCcard()">Save</a> -->
+
+				<h1>Credit Card Info</h1>
+			</div>
+			<center>
+				<h2>Details</h2>
+			</center>
+			<form id="ccard-view-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="upd-cc-cardNumber"> Card Number:
+								<input id="upd-cc-cardNumber" name="ccnumber" type="text"/>
+							</label>
+						</li>
+						
+						<li>
+							<label for="upd-cc-expDate"> Expiration Date:
+								<input id="upd-cc-expDate" name="ccexpirationdate" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-cc-brand"> Brand:
+								<input id="upd-cc-brand" name="ccbrand" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-cc-secCode"> secCode:
+								<input id="upd-cc-secCode" name="ccsecuritycode" type="text"/>
+							</label>
+						</li>
+
+					</ul>
+				</fieldset>
+			</form>
+			<center>
+				<a data-role="button" onclick="DeleteCcard()">Delete</a>
+			</center>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+			</div>
+		</div>
+
+<!-- add ccard beg-->
+<div id="add-ccard" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#creditcard">Cancel</a>
+				<h1>New Credit Card</h1>
+				<a data-role="button" onclick="SaveCcard()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new Credit Card info</h2>
+			</center>
+			<form id="ccard-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="cardNumber"> Credit card Number:
+								<input id="cardNumber" name="ccnumber" type="number"/>
+							</label>
+						</li>
+						
+						<li>
+							<label for="expDate"> Expiration date:
+								<input id="expDate" name="ccexpirationdate" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="brand"> Brand:
+								<input id="brand" name="ccbrand" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="secCode"> Security Code:
+								<input id="secCode" name="ccsecurityCode" type="number"/>
+							</label>
+						</li>						
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+		<div id ="address-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Address</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-address"></a>
+			</div>
+			<div data-role="content">
+				<ul id="addresses-list"  data-role="listview" data-theme="b" data-inset="true" ></ul>
+			</div>
+		</div>
+
+		<div id="address-view" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#account">Cancel</a>
+				<a data-role="button" onclick="UpdateAddress()">Save</a>
+
+				<h1>Address Info</h1>
+			</div>
+			<center>
+				<h2>Details</h2>
+			</center>
+			<form id="address-view-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="upd-ad-mailAddress"> Mail Address:
+								<input id="upd-ad-mailAddress" name="amailaddress" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-city"> City:
+								<input id="upd-ad-city" name="acity" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-country"> Country:
+								<input id="upd-ad-country" name="acountry" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-zipcode"> Zip Code:
+								<input id="upd-ad-zipcode" name="azipcode" type="text"/>
+							</label>
+						</li>
+						
+
+					</ul>
+				</fieldset>
+			</form>
+			<center>
+				<a data-role="button" onclick="DeleteAddress()">Delete</a>
+			</center>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+			</div>
+		</div>
+		
+		
+		<div id="add-address" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#address-menu">Cancel</a>
+				<h1>New Address</h1>
+				<a data-role="button" onclick="SaveAddress()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new Address info</h2>
+			</center>
+			<form id="address-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="mailAddress"> Mail Address:
+								<input id="mailAddress" name="amailaddress" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="city"> City:
+								<input id="city" name="acity" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="country"> Country:
+								<input id="country" name="acountry" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="zipcode"> zipcode:
+								<input id="zipcode" name="azipcode" type="number"/>
+							</label>
+						</li>
+											
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+
+		<!-- end End Credit Card and Address pages -->
+
+		<!-- cart-->
+		<div id ="cart" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Cart</h1>
+				<!-- <img src="http://jqfaq.com/wp-content/uploads/logo_v1.png"> --><a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<ul id="cart-list" data-role="listview" data-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search in cart..."></ul>
+			</div>
+			<div data-role="content">
+				<a  onclick=" verifyIfLoggedIn()" data-theme="b" data-role="button" >Checkout</a>
+				
+			</div>
+		</div>
+
+		<!-- end cart -->
+
+		<div id="bid-amount" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#books">Cancel</a>
+				<h1>Bid Amount</h1>
+			</div>
+			<form id="bid-amount-form">
+				<fieldset data-role="controlgroup">
+					
+							<label for="upd-bamount"> Amount:
+								<input id="upd-bamount" name="bamount" type="text"/>
+							</label>
+					
+				</fieldset>
+			</form>
+			<div data-role="content" id="amountButtonDiv" >
+
+				<a href="#bid" data-role="button" data-theme="b"> Bid Now</a>
+			</div>
+		</div>
+
+		
+		
+		
+		
+			<div id ="bid" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Bid History</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<ul id="bids-list" data-role="listview" data-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search a bid"></ul>
+			</div>
+			<div data-role="content">
+				<a href="#removebid" data-role="button" data-theme="b">Remove Bid</a>
+			</div>
+		</div>
+		<!-- end bid -->
+		
+		
+		<!-- bid event -->
+		
+		<div id ="bidevent" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Bid Event</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<ul id="bidevent-list" data-role="listview" data-theme="b" data-inset="true" data-filter="true" data-filter-placeholder="Search a bid"></ul>
+			</div>
+			
+		</div>
+		<!-- end bid event -->
+		
+		<!-- add category-->
+		
+		<div id ="addcategory" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Add Category</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<form id="category-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="Category Name"> Category Name:
+								<input id="addcatname" name="catname" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="Subcategory Name"> Parrent Name:
+								<input id ="addcatsubmenu" name="catsubmenu" type="text"/>
+							</label>
+						</li>
+						<li>
+							
+						<li>
+							<a data-role="button" data-theme = "b" onclick="addcategory()">Add</a>
+						</li>
+					</ul>
+				</fieldset>
+			</form></div>
+			
+			
+		</div>
+		<!-- end add category -->
+		
+		<!-- delete category -->
+		
+		<div id ="deletecategory" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Delete Category</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<ul id="deletecategory-list" data-role="listview" data-theme="b" data-inset="true" ></ul>
+				
+			</div>
+			
+		</div>
+		<!-- end delete category -->
+		
+		<!-- Bank account -->
+		
+		<div id ="bankaccount" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Bank Account</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<ul id="bank-list" data-role="listview" data-theme="b" data-inset="true" ></ul>
+				
+			</div>
+			
+		</div>
+		<!-- end bank account -->
+		
+		<!-- buy product page-->
+			<!-- Select address-->
+		<div id ="selectad" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Select Address to shipping</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				
+			</div>
+			<div data-role="content">
+				<ul id="buyaddresses-list"  data-role="listview" data-theme="b" data-inset="true" ></ul>
+			</div>
+		</div>
+		
+		
+			<!-- Select creditcard-->
+		<div id ="selectcc" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Select Credit Card to Pay</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				
+			</div>
+			<div data-role="content">
+				<ul id="buycreditcard-list"  data-role="listview" data-theme="b" data-inset="true" ></ul>
+			</div>
+		</div>
+		<!-- confirm buy-->
+		
+		<div id ="confirm" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Confirm</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<form id="confirm-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="confirmpname"> Product id:
+								<input id="confirmpname" name="pname" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="confirmpprice"> Product Name:
+								<input id="confirmpprice" name="pprice" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="confirmpseller"> Product Price:
+								<input id="confirmpseller" name="username" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="Subcategory Name"> CreditCard number:
+								<input id ="confirmccid" name="ccid" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="Subcategory Name"> Address:
+								<input id ="confirmaid" name="aid" type="text"/>
+							</label>
+						</li>
+						
+					</ul>
+				</fieldset>
+			</form></div>
+			<div data-role="content">
+				<a href="#invoice" data-role="button" data-theme="b">Confirm Buy</a>
+			</div>
+			
+		</div>
+		<!-- end confirm buy-->
+		<!-- invoice-->
+		
+		<div id ="invoice" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menus" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a  onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a onclick="admin()" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Invoice</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+			</div>
+			<div data-role="content">
+				<form id="invoice-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<!-- invoice(iamount, itotalprice, pid, uid, ccid, bankid)-->
+						<li>
+							<label for="amount"> Amount of products:
+								<input id="iamount" name="iamount" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="itotalprice"> Total price:
+								<input id="itotalprice" name="itotalprice" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="pid"> Product id:
+								<input id="invoicepid" name="pid" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="Userid"> User id:
+								<input id ="invoiceuid" name="uid" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="Credit"> Credit Card id:
+								<input id ="invoiceccid" name="ccid" type="number"/>
+							</label>
+						</li>
+						<li>
+							<label for="Bank"> Bank id:
+								<input id ="invoicecbid" name="bid" type="number"/>
+							</label>
+						</li>
+						
+						
+					</ul>
+				</fieldset>
+			</form></div>
+			
+			
+		</div>
+		<!-- end invoice-->
+		
+		
+		<!-- administrator login -->
+		
+		
+		<!-- Administrator LogIn-->
+               <div id="adminlog" data-role="page">
+                       <div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+                               <ul data-role="listview" data-theme="h">
+                                       <li>
+                                               <a href="#menus" > Menu</a>
+                                       </li>
+                                       <li>
+                                               <a href="#register" >Register</a>
+                                       </li>
+                                       <li>
+                                               <a href="#cart" > Cart</a>
+                                       </li>
+                                       <li>
+                                               <a  onclick="searchUser()" > Account</a>
+                                       </li>
+                                       <li>
+                                               <a href="#login" > Login</a>
+                                       </li>
+                                       <li>
+                                               <a onclick="admin()" > Admin Options</a>
+                                       </li>
+                               </ul>
+                       </div><!-- /panel -->
+
+                       <div data-role="header" data-theme="a" data-position="fixed">
+                               <a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+                               <h1>Log In</h1>
+                       </div>
+                       <div data-role="content">
+                               <form name="form-login">
+
+                                       <!-- username -->
+                                       <label for="usernameLogin">Username</label>
+                                       <input id="adminusername"  title="Write your username."/>
+                                       <br />
+
+                                       <!-- password -->
+                                       <label for="passwordLogin">Password</label>
+                                       <input id="adminpassword" type="password" title="Must Be at least 8 characters" />
+                                       <br />
+
+                                       <p>
+                                               <a data-role="button" onclick="adminverification()" data-theme="b">Log In</a>
+                                               
+                                       </p>
+
+                               </form>
+                               
+                       </div>
+                       
+                       
+
+               </div>
+               
+               <!-- end admin -->
+		
+		
+<div id ="bankaccount-menu" data-role="page">
+			<div data-role="panel" id="mypanel" data-theme="a" data-position="left" data-display="reveal">
+				<ul data-role="listview" data-theme="h">
+					<li>
+						<a href="#menu" > Menu</a>
+					</li>
+					<li>
+						<a href="#register" >Register</a>
+					</li>
+					<li>
+						<a href="#cart" > Cart</a>
+					</li>
+					<li>
+						<a href="#account" onclick="searchUser()" > Account</a>
+					</li>
+					<li>
+						<a href="#login" > Login</a>
+					</li>
+					<li>
+						<a href="#adminOptions-menu" > Admin Options</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Bank Account</h1>
+				<a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-corners="false"></a>
+				<a data-role="button" data-icon="add" data-iconpos="notext" href="#add-bankaccount"></a>
+			</div>
+			<div data-role="content">
+				<ul id="bankaccounts-list"  data-role="listview" data-theme="b" data-inset="true" ></ul>
+			</div>
+		</div>
+
+		<div id="bankaccount-view" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#account">Cancel</a>
+				<a data-role="button" onclick="UpdateBankaccount()">Save</a>
+
+				<h1>Bank Account Info</h1>
+			</div>
+			<center>
+				<h2>Details</h2>
+			</center>
+			<form id="bankaccount-view-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="upd-ad-bankaccountnumber"> Bank Account Number:
+								<input id="upd-ad-bankaccountnumber" name="bankaccountnumber" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="upd-ad-bankname"> Bank Name:
+								<input id="upd-ad-bankname" name="bankname" type="text"/>
+							</label>
+						</li>											
+					</ul>
+				</fieldset>
+			</form>
+			<center>
+				<a data-role="button" onclick="DeleteBankaccount()">Delete</a>
+			</center>
+			<div data-role="footer" id="ftrMain" style="text-align:center" name="ftrMain"
+			data-position="fixed" data-theme="a">
+
+			</div>
+		</div>
+		
+		
+		<div id="add-bankaccount" data-role="page">
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<a data-role="button" data-rel="back" href="#bankaccount-menu">Cancel</a>
+				<h1>New Bankaccount</h1>
+				<a data-role="button" onclick="SaveBankaccount()">Save</a>
+			</div>
+			<center>
+				<h2>Enter the new Bank Account info</h2>
+			</center>
+			<form id="bankaccount-form">
+				<fieldset data-role="controlgroup">
+					<ul>
+						<li>
+							<label for="bankaccountnumber"> Bank Account Number:
+								<input id="bankaccountnumber" name="bankaccountnumber" type="text"/>
+							</label>
+						</li>
+						<li>
+							<label for="bankname"> Bank name:
+								<input id="bankname" name="bankname" type="text"/>
+							</label>
+						</li>										
+					</ul>
+				</fieldset>
+			</form>
+		</div>
+
+		
+
+	</body>
+</html>
