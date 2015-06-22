@@ -1,6 +1,3 @@
-Phase I
+Databases Proyect
 
-By:
-Jose Ocasio Serra
-Jammy Velez Montalvo
-Jan M. Stweart
+Bitmart is a shopping mobile app developed in JQuery Mobile.
